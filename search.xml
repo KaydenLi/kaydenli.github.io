@@ -8,7 +8,7 @@
 <li>node 安装：<a href="www.nodejs.org">nodejs官网</a><br><code>$ sudo apt install node</code></li>
 <li>安装完成之后会有 node 命令和 npm 命令<br><code>$ npm -v</code> 查看是否安装完成</li>
 <li>npm 安装 cnpm 并设置淘宝源：<br><code>$ npm install -g cnpm --registry=https://registry.npm.taobao.org</code></li>
-<li>vue安装<br>全局安装 vue-cli 脚手架工具（旧版本）：<code>$ cnpm install --global vue-cli</code><br>或者全局安装 vue-cli 脚手架工具（新版本）： <code>$ sudo cnpm install -g @vue/cli</code></li>
+<li>vue安装<br>全局安装 vue-cli 脚手架工具： <code>$ sudo cnpm install -g @vue/cli</code></li>
 <li>mongodb 数据库的安装<br><code>$ sudo apt install mongodb</code><h2 id="2-初始化项目（vue-cli）"><a href="#2-初始化项目（vue-cli）" class="headerlink" title="2. 初始化项目（vue-cli）"></a>2. 初始化项目（vue-cli）</h2></li>
 <li>sever 文件夹：放置服务端项目，包括给后台管理界面提供的接口和给 web 端提供的端口<ol>
 <li>初始化一个 node 项目：<code>$ cnpm init -y</code></li>
