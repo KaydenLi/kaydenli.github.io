@@ -1,6 +1,90 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>浏览器相关知识</title>
+    <url>/2020/01/30/%E6%B5%8F%E8%A7%88%E5%99%A8%E7%9B%B8%E5%85%B3/</url>
+    <content><![CDATA[<p>＃ 浏览器知识</p>
+<h2 id="浏览器内核"><a href="#浏览器内核" class="headerlink" title="浏览器内核"></a>浏览器内核</h2><p>   主流浏览器内核，主流浏览器是有一定市场份额且有自己独立研发内核的浏览器：</p>
+<ol>
+<li>Trident内核：代表浏览器 IE（Edge是微软随win10推出，使用的是EdgeHTML内核）</li>
+<li>Gecko内核：代表浏览器 Firefox</li>
+<li>Presto内核(已废弃)：Opera12.17及更早版本曾经采用的内核，现已停止开发并废弃。Opera现已改用Google Chrome的Blink内核。</li>
+<li>Webkit内核：代表浏览器 Safari、Chrome。</li>
+<li>Blink内核：由Google和Opera Software基于Webkit引擎研发的排版引擎，内置于Chrome浏览器之中。代表浏览器 Opera、Chrome。<br>总结为如下的表格：<table>
+<thead>
+<tr>
+<th>主流浏览器</th>
+<th>内核</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>IE -&gt; Edge</td>
+<td>trident-&gt;EdgeHTML</td>
+</tr>
+<tr>
+<td>Chrome</td>
+<td>webkit-&gt;blink</td>
+</tr>
+<tr>
+<td>Safari</td>
+<td>webkit</td>
+</tr>
+<tr>
+<td>Firefox</td>
+<td>Gecko</td>
+</tr>
+<tr>
+<td>Opera</td>
+<td>Presto-&gt;blink</td>
+</tr>
+<tr>
+<td>## js引擎</td>
+<td></td>
+</tr>
+<tr>
+<td>主流浏览器的 js 引擎</td>
+<td></td>
+</tr>
+</tbody></table>
+</li>
+<li>Chakra，是在IE9上使用的js引擎。</li>
+<li>SpriderMonkey，TraceMonkey，JaegerMonkey这些运用在Mozilla FireFox上。</li>
+<li>v8，应用于Chrome，遨游上。</li>
+<li>Nitro，应用于Safari上。<br>总结如下表:<table>
+<thead>
+<tr>
+<th>主流浏览器</th>
+<th>js引擎</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>IE -&gt; Edge</td>
+<td>JScript（IE3.0-IE8.0） /IE9+ Chakra</td>
+</tr>
+<tr>
+<td>Chrome</td>
+<td>V8</td>
+</tr>
+<tr>
+<td>Safari</td>
+<td>Nitro（4-）</td>
+</tr>
+<tr>
+<td>Firefox</td>
+<td>SpiderMonkey（1.0-3.0）/ TraceMonkey（3.5-3.6）/ JaegerMonkey（4.0-）</td>
+</tr>
+<tr>
+<td>Opera</td>
+<td>Linear A（4.0-6.1）/ Linear B（7.0-9.2）/ Futhark（9.5-10.2）/ Carakan（10.5-）</td>
+</tr>
+</tbody></table>
+</li>
+</ol>]]></content>
+      <categories>
+        <category>html</category>
+      </categories>
+  </entry>
+  <entry>
     <title>项目环境搭建与初始化</title>
     <url>/2020/01/18/%E9%A1%B9%E7%9B%AE%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA%E4%B8%8E%E5%88%9D%E5%A7%8B%E5%8C%96/</url>
     <content><![CDATA[<h1 id="项目环境搭建与初始化"><a href="#项目环境搭建与初始化" class="headerlink" title="项目环境搭建与初始化"></a>项目环境搭建与初始化</h1><hr>
