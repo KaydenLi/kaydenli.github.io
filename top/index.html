@@ -54,7 +54,7 @@
 <meta property="og:description" content="AV.initialize(&quot;CDVsUrBN0uD7CCc3jYSaBcca-gzGzoHsz&quot;, &quot;9kGksbYhN71k6AwQo69gYqVj&quot;);    var time&#x3D;0   var title&#x3D;&quot;&quot;   var url&#x3D;&quot;&quot;   var query &#x3D; new AV.Query(&#39;Counter&#39;);   query.notEqualTo(&#39;id&#39;,0);   query.d">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2020-01-18T09:23:06.000Z">
-<meta property="article:modified_time" content="2020-01-18T10:54:53.404Z">
+<meta property="article:modified_time" content="2020-01-30T05:41:04.518Z">
 <meta property="article:author" content="Kayden Li">
 <meta name="twitter:card" content="summary">
 
@@ -216,7 +216,7 @@
   query.descending('time');
   query.limit(100);
   query.find().then(function (todo) {
-    for (var i=0;i<100;i++){
+    for (var i=0;i<1000;i++){
       var result=todo[i].attributes;
       time=result.time;
       title=result.title;
@@ -227,7 +227,6 @@
   }, function (error) {
     console.log("error");
   });
-</script>
 </script>
       </div>
       
