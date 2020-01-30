@@ -1,9 +1,46 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>项目环境搭建与初始化</title>
+    <url>/2020/01/30/%E9%A1%B9%E7%9B%AE%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA%E4%B8%8E%E5%88%9D%E5%A7%8B%E5%8C%96/</url>
+    <content><![CDATA[<h1 id="项目环境搭建与初始化"><a href="#项目环境搭建与初始化" class="headerlink" title="项目环境搭建与初始化"></a>项目环境搭建与初始化</h1><hr>
+<h2 id="1-工具安装和环境搭建（nodejs-npm-mongodb）"><a href="#1-工具安装和环境搭建（nodejs-npm-mongodb）" class="headerlink" title="1. 工具安装和环境搭建（nodejs,npm,mongodb）"></a>1. 工具安装和环境搭建（nodejs,npm,mongodb）</h2><ol>
+<li>node 安装：<a href="www.nodejs.org">nodejs官网</a><br><code>$ sudo apt install node</code></li>
+<li>安装完成之后会有 node 命令和 npm 命令<br><code>$ npm -v</code> 查看是否安装完成</li>
+<li>npm 安装 cnpm 并设置淘宝源：<br><code>$ npm install -g cnpm --registry=https://registry.npm.taobao.org</code></li>
+<li>vue安装<br>全局安装 vue-cli 脚手架工具： <code>$ sudo cnpm install -g @vue/cli</code></li>
+<li>mongodb 数据库的安装<br><code>$ sudo apt install mongodb</code></li>
+</ol>
+<h2 id="2-初始化项目（vue-cli）"><a href="#2-初始化项目（vue-cli）" class="headerlink" title="2. 初始化项目（vue-cli）"></a>2. 初始化项目（vue-cli）</h2><ol>
+<li>sever 文件夹：放置服务端项目，包括给后台管理界面提供的接口和给 web 端提供的端口<ol>
+<li>初始化一个 node 项目：<code>$ cnpm init -y</code></li>
+<li>建立入口文件： <code>$ touch index.js</code></li>
+<li>在<code>index.js</code>内自定义脚本执行 nodemo：<code>&quot;server&quot; : &quot;nodemon index.js&quot;</code></li>
+<li>全局安装 nodemon：<code>$ cnpm i -g nodemon</code></li>
+</ol>
+</li>
+<li>web 文件夹：前端界面<ol>
+<li>建立 vue 初始文件：<code>$ vue create web</code></li>
+<li>初始化完成后按照命令执行：<code>$ cd web</code>以及<code>$ npm run serve</code></li>
+<li>进入浏览器查看 127.0.0.1:port 确认是否搭建成功</li>
+</ol>
+</li>
+<li>admin 文件夹：管理员界面<ol>
+<li>建立 vue 初始文件：<code>$ vue create admin</code></li>
+<li>初始化完成后按照命令执行：<code>$ cd admin</code>以及<code>$ npm run serve</code></li>
+<li>进入浏览器查看 127.0.0.1:port 确认是否搭建成功</li>
+</ol>
+</li>
+</ol>]]></content>
+      <categories>
+        <category>node-vue-mongodb全栈开发</category>
+      </categories>
+  </entry>
+  <entry>
     <title>浏览器相关知识</title>
     <url>/2020/01/30/%E6%B5%8F%E8%A7%88%E5%99%A8%E7%9B%B8%E5%85%B3/</url>
-    <content><![CDATA[<h2 id="浏览器内核"><a href="#浏览器内核" class="headerlink" title="浏览器内核"></a>浏览器内核</h2><p>   主流浏览器内核，主流浏览器是有一定市场份额且有自己独立研发内核的浏览器：</p>
+    <content><![CDATA[<h1 id="浏览器相关知识"><a href="#浏览器相关知识" class="headerlink" title="浏览器相关知识"></a>浏览器相关知识</h1><hr>
+<h2 id="浏览器内核"><a href="#浏览器内核" class="headerlink" title="浏览器内核"></a>浏览器内核</h2><p>   主流浏览器内核，主流浏览器是有一定市场份额且有自己独立研发内核的浏览器：</p>
 <ol>
 <li>Trident内核：代表浏览器 IE（Edge是微软随win10推出，使用的是EdgeHTML内核）</li>
 <li>Gecko内核：代表浏览器 Firefox</li>
@@ -76,40 +113,6 @@
 </ol>]]></content>
       <categories>
         <category>html</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>项目环境搭建与初始化</title>
-    <url>/2020/01/18/%E9%A1%B9%E7%9B%AE%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA%E4%B8%8E%E5%88%9D%E5%A7%8B%E5%8C%96/</url>
-    <content><![CDATA[<h1 id="项目环境搭建与初始化"><a href="#项目环境搭建与初始化" class="headerlink" title="项目环境搭建与初始化"></a>项目环境搭建与初始化</h1><hr>
-<h2 id="1-工具安装和环境搭建（nodejs-npm-mongodb）"><a href="#1-工具安装和环境搭建（nodejs-npm-mongodb）" class="headerlink" title="1. 工具安装和环境搭建（nodejs,npm,mongodb）"></a>1. 工具安装和环境搭建（nodejs,npm,mongodb）</h2><ol>
-<li>node 安装：<a href="www.nodejs.org">nodejs官网</a><br><code>$ sudo apt install node</code></li>
-<li>安装完成之后会有 node 命令和 npm 命令<br><code>$ npm -v</code> 查看是否安装完成</li>
-<li>npm 安装 cnpm 并设置淘宝源：<br><code>$ npm install -g cnpm --registry=https://registry.npm.taobao.org</code></li>
-<li>vue安装<br>全局安装 vue-cli 脚手架工具： <code>$ sudo cnpm install -g @vue/cli</code></li>
-<li>mongodb 数据库的安装<br><code>$ sudo apt install mongodb</code><h2 id="2-初始化项目（vue-cli）"><a href="#2-初始化项目（vue-cli）" class="headerlink" title="2. 初始化项目（vue-cli）"></a>2. 初始化项目（vue-cli）</h2></li>
-<li>sever 文件夹：放置服务端项目，包括给后台管理界面提供的接口和给 web 端提供的端口<ol>
-<li>初始化一个 node 项目：<code>$ cnpm init -y</code></li>
-<li>建立入口文件： <code>$ touch index.js</code></li>
-<li>在<code>index.js</code>内自定义脚本执行 nodemo：<code>&quot;server&quot; : &quot;nodemon index.js&quot;</code></li>
-<li>全局安装 nodemon：<code>$ cnpm i -g nodemon</code></li>
-</ol>
-</li>
-<li>web 文件夹：前端界面<ol>
-<li>建立 vue 初始文件：<code>$ vue create web</code></li>
-<li>初始化完成后按照命令执行：<code>$ cd web</code>以及<code>$ npm run serve</code></li>
-<li>进入浏览器查看 127.0.0.1:port 确认是否搭建成功</li>
-</ol>
-</li>
-<li>admin 文件夹：管理员界面<ol>
-<li>建立 vue 初始文件：<code>$ vue create admin</code></li>
-<li>初始化完成后按照命令执行：<code>$ cd admin</code>以及<code>$ npm run serve</code></li>
-<li>进入浏览器查看 127.0.0.1:port 确认是否搭建成功</li>
-</ol>
-</li>
-</ol>]]></content>
-      <categories>
-        <category>node-vue-mongodb全栈开发</category>
       </categories>
   </entry>
   <entry>
