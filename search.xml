@@ -3,8 +3,7 @@
   <entry>
     <title>浏览器相关知识</title>
     <url>/2020/01/30/%E6%B5%8F%E8%A7%88%E5%99%A8%E7%9B%B8%E5%85%B3/</url>
-    <content><![CDATA[<p>＃ 浏览器知识</p>
-<h2 id="浏览器内核"><a href="#浏览器内核" class="headerlink" title="浏览器内核"></a>浏览器内核</h2><p>   主流浏览器内核，主流浏览器是有一定市场份额且有自己独立研发内核的浏览器：</p>
+    <content><![CDATA[<h2 id="浏览器内核"><a href="#浏览器内核" class="headerlink" title="浏览器内核"></a>浏览器内核</h2><p>   主流浏览器内核，主流浏览器是有一定市场份额且有自己独立研发内核的浏览器：</p>
 <ol>
 <li>Trident内核：代表浏览器 IE（Edge是微软随win10推出，使用的是EdgeHTML内核）</li>
 <li>Gecko内核：代表浏览器 Firefox</li>
