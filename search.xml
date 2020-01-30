@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>浏览器相关知识</title>
+    <title>html标签</title>
     <url>/2020/01/30/html%E6%A0%87%E7%AD%BE/</url>
     <content><![CDATA[<h1 id="HTML的基本标签"><a href="#HTML的基本标签" class="headerlink" title="HTML的基本标签"></a>HTML的基本标签</h1><hr>
 <p>本文根据 <a href="https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element" target="_blank" rel="noopener">html元素参考</a> 整理得来，作为笔记使用。</p>
