@@ -1,6 +1,597 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>浏览器相关知识</title>
+    <url>/2020/01/30/html%E6%A0%87%E7%AD%BE/</url>
+    <content><![CDATA[<h1 id="HTML的基本标签"><a href="#HTML的基本标签" class="headerlink" title="HTML的基本标签"></a>HTML的基本标签</h1><hr>
+<ol>
+<li><p>根元素</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<table>
+<thead>
+<tr>
+<th align="center">元素</th>
+<th align="center">作用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">html</td>
+<td align="center">HTML文档的根。</td>
+</tr>
+</tbody></table>
+</li>
+<li><p>文档元数据</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">link</span>&gt;</span>、<span class="tag">&lt;<span class="name">meta</span>&gt;</span>、<span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="xml">、<span class="tag">&lt;<span class="name">style</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
+<table>
+<thead>
+<tr>
+<th align="center">元素</th>
+<th align="center">作用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">head</td>
+<td align="center">关于文档元数据的一个集合，包括脚本或样式表的链接或内容。</td>
+</tr>
+<tr>
+<td align="center">title</td>
+<td align="center">定义文档的标题，将显示在浏览器的标题栏或标签页上。该元素只能包含文本，包含的标签不会被解释。</td>
+</tr>
+<tr>
+<td align="center">base</td>
+<td align="center">定义页面上相对 URL 的基准 URL。</td>
+</tr>
+<tr>
+<td align="center">link</td>
+<td align="center">用于链接外部的 CSS 到该文档。</td>
+</tr>
+<tr>
+<td align="center">meta</td>
+<td align="center">定义其他 HTML 元素无法描述的元数据。</td>
+</tr>
+<tr>
+<td align="center">style</td>
+<td align="center">用于内联 CSS。</td>
+</tr>
+</tbody></table>
+</li>
+<li><p>内容分区</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">header</span>&gt;</span>、<span class="tag">&lt;<span class="name">nav</span>&gt;</span>、 <span class="tag">&lt;<span class="name">section</span>&gt;</span>、<span class="tag">&lt;<span class="name">aside</span>&gt;</span> 、<span class="tag">&lt;<span class="name">footer</span>&gt;</span> 、<span class="tag">&lt;<span class="name">h1</span>&gt;</span>~<span class="tag">&lt;<span class="name">h6</span>&gt;</span> 、<span class="tag">&lt;<span class="name">article</span>&gt;</span> 、<span class="tag">&lt;<span class="name">address</span>&gt;</span>、<span class="tag">&lt;<span class="name">hgroup</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<table>
+<thead>
+<tr>
+<th align="center">元素</th>
+<th align="center">作用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">header</td>
+<td align="center">表示一组引导性的帮助。</td>
+</tr>
+<tr>
+<td align="center">nav</td>
+<td align="center">导航。</td>
+</tr>
+<tr>
+<td align="center">section</td>
+<td align="center">表示文档中的一个区域（或节），通过是否含一个标题作为子节点来辨识。</td>
+</tr>
+<tr>
+<td align="center">aside</td>
+<td align="center">表示与其余页面无关的内容部分。</td>
+</tr>
+<tr>
+<td align="center">footer</td>
+<td align="center">表示最近一个章节内容或者根节点元素的页脚。</td>
+</tr>
+<tr>
+<td align="center">h</td>
+<td align="center">标题。</td>
+</tr>
+<tr>
+<td align="center">article</td>
+<td align="center">表示文档、页面、应用或网站中的独立结构。</td>
+</tr>
+<tr>
+<td align="center">address</td>
+<td align="center">地址信息。</td>
+</tr>
+<tr>
+<td align="center">hgroup</td>
+<td align="center">代表一个段的标题。</td>
+</tr>
+</tbody></table>
+</li>
+<li><p>文本内容</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">main</span>&gt;</span>、<span class="tag">&lt;<span class="name">div</span>&gt;</span>、<span class="tag">&lt;<span class="name">p</span>&gt;</span>、<span class="tag">&lt;<span class="name">pre</span>&gt;</span>、<span class="tag">&lt;<span class="name">ol</span>&gt;</span>、 <span class="tag">&lt;<span class="name">ul</span>&gt;</span>、<span class="tag">&lt;<span class="name">li</span>&gt;</span>、<span class="tag">&lt;<span class="name">dl</span>&gt;</span> 、<span class="tag">&lt;<span class="name">dt</span>&gt;</span>、<span class="tag">&lt;<span class="name">dd</span>&gt;</span>、<span class="tag">&lt;<span class="name">figure</span>&gt;</span> 、<span class="tag">&lt;<span class="name">figcaption</span>&gt;</span>、<span class="tag">&lt;<span class="name">blockquote</span>&gt;</span> 、<span class="tag">&lt;<span class="name">hr</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<table>
+<thead>
+<tr>
+<th align="center">元素</th>
+<th align="center">作用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">main</td>
+<td align="center">文档<code>&lt;body&gt;</code>或应用的主体部分。</td>
+</tr>
+<tr>
+<td align="center">div</td>
+<td align="center">文档分区元素， 通用型流内容容器。</td>
+</tr>
+<tr>
+<td align="center">p</td>
+<td align="center">段落。</td>
+</tr>
+<tr>
+<td align="center">pre</td>
+<td align="center">预定义格式文本。</td>
+</tr>
+<tr>
+<td align="center">ol</td>
+<td align="center">有序列表。</td>
+</tr>
+<tr>
+<td align="center">ul</td>
+<td align="center">无序列表。</td>
+</tr>
+<tr>
+<td align="center">li</td>
+<td align="center">列表条目元素。</td>
+</tr>
+<tr>
+<td align="center">dl</td>
+<td align="center">描述列表元素。</td>
+</tr>
+<tr>
+<td align="center">dt</td>
+<td align="center">术语定义元素。</td>
+</tr>
+<tr>
+<td align="center">dd</td>
+<td align="center">描述元素，描述列表<code>&lt;dl&gt;</code>的子元素，<code>&lt;dd&gt;</code>与 <code>&lt;dt&gt;</code> 一起用。</td>
+</tr>
+<tr>
+<td align="center">figure</td>
+<td align="center">代表一段独立的内容, 经常与说明(caption) <code>&lt;figcaption&gt;</code> 配合使用。</td>
+</tr>
+<tr>
+<td align="center">figcaption</td>
+<td align="center">图片说明/标题，于描述其父节点 <code>&lt;figure&gt;</code> 元素里的其他数据。</td>
+</tr>
+<tr>
+<td align="center">blockquote</td>
+<td align="center">HTML 块级引用元素。</td>
+</tr>
+<tr>
+<td align="center">hr</td>
+<td align="center">表示段落级元素之间的主题转换，视觉上看是水平线。</td>
+</tr>
+</tbody></table>
+</li>
+<li><p>内联文本语义:</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">span</span>&gt;</span>、<span class="tag">&lt;<span class="name">a</span>&gt;</span>、<span class="tag">&lt;<span class="name">strong</span>&gt;</span>、<span class="tag">&lt;<span class="name">em</span>&gt;</span>、<span class="tag">&lt;<span class="name">q</span>&gt;</span>、<span class="tag">&lt;<span class="name">br</span>&gt;</span>、<span class="tag">&lt;<span class="name">mark</span>&gt;</span>、<span class="tag">&lt;<span class="name">code</span>&gt;</span>、<span class="tag">&lt;<span class="name">abbr</span>&gt;</span>、<span class="tag">&lt;<span class="name">b</span>&gt;</span>、<span class="tag">&lt;<span class="name">bdi</span>&gt;</span>、<span class="tag">&lt;<span class="name">bdo</span>&gt;</span>、<span class="tag">&lt;<span class="name">sub</span>&gt;</span>、<span class="tag">&lt;<span class="name">sup</span>&gt;</span>、<span class="tag">&lt;<span class="name">time</span>&gt;</span>、<span class="tag">&lt;<span class="name">i</span>&gt;</span>、<span class="tag">&lt;<span class="name">u</span>&gt;</span>、<span class="tag">&lt;<span class="name">cite</span>&gt;</span>、<span class="tag">&lt;<span class="name">data</span>&gt;</span>、<span class="tag">&lt;<span class="name">kbd</span>&gt;</span>、<span class="tag">&lt;<span class="name">nobr</span>&gt;</span>、<span class="tag">&lt;<span class="name">s</span>&gt;</span>、<span class="tag">&lt;<span class="name">samp</span>&gt;</span>、<span class="tag">&lt;<span class="name">tt</span>&gt;</span>、<span class="tag">&lt;<span class="name">var</span>&gt;</span>、<span class="tag">&lt;<span class="name">wbr</span>&gt;</span>、<span class="tag">&lt;<span class="name">rp</span>&gt;</span>、<span class="tag">&lt;<span class="name">rt</span>&gt;</span>、<span class="tag">&lt;<span class="name">rtc</span>&gt;</span>、<span class="tag">&lt;<span class="name">ruby</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<table>
+<thead>
+<tr>
+<th align="center">元素</th>
+<th align="center">作用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">kbd</td>
+<td align="center">表示用户输入。</td>
+</tr>
+<tr>
+<td align="center">span</td>
+<td align="center">通用行内容器。</td>
+</tr>
+<tr>
+<td align="center">a</td>
+<td align="center">超链接。</td>
+</tr>
+<tr>
+<td align="center">strong&gt;</td>
+<td align="center">粗体显示。</td>
+</tr>
+<tr>
+<td align="center">em</td>
+<td align="center">标记出需要用户着重阅读的内容，可通过嵌套加深着重程度。</td>
+</tr>
+<tr>
+<td align="center">q</td>
+<td align="center">短的引用文本。</td>
+</tr>
+<tr>
+<td align="center">br</td>
+<td align="center">换行。</td>
+</tr>
+<tr>
+<td align="center">mark</td>
+<td align="center">代表突出显示的文字，可以用来显示搜索引擎搜索后关键词。</td>
+</tr>
+<tr>
+<td align="center">code</td>
+<td align="center">呈现一段计算机代码。</td>
+</tr>
+<tr>
+<td align="center">abbr</td>
+<td align="center">缩写，并可选择提供一个完整的描述。</td>
+</tr>
+<tr>
+<td align="center">b</td>
+<td align="center">提醒注意，样式和粗体类似（不要用于显示粗体，用css font-weight来创建粗体）。</td>
+</tr>
+<tr>
+<td align="center">bdi</td>
+<td align="center">双向隔离元素。</td>
+</tr>
+<tr>
+<td align="center">bdo</td>
+<td align="center">双向覆盖元素。</td>
+</tr>
+<tr>
+<td align="center">sub</td>
+<td align="center">排低文本。</td>
+</tr>
+<tr>
+<td align="center">sup</td>
+<td align="center">排高文本。</td>
+</tr>
+<tr>
+<td align="center">time</td>
+<td align="center">时间。</td>
+</tr>
+<tr>
+<td align="center">i</td>
+<td align="center">区分普通文本的一系列文本，内容通常以斜体显示。</td>
+</tr>
+<tr>
+<td align="center">u</td>
+<td align="center">使文本在其内容的基线下的一行呈现下划线。</td>
+</tr>
+<tr>
+<td align="center">cite</td>
+<td align="center">表示一个作品的引用。</td>
+</tr>
+<tr>
+<td align="center">data</td>
+<td align="center">将一个指定内容和机器可读的翻译联系在一起。但如果内容是与 time 或者 date 相关的，一定要使用 <time>。</td>
+</tr>
+<tr>
+<td align="center">dfn</td>
+<td align="center">表示术语的一个定义。</td>
+</tr>
+<tr>
+<td align="center">kbd</td>
+<td align="center">表示用户输入。</td>
+</tr>
+<tr>
+<td align="center">nobr</td>
+<td align="center">阻止文本自动拆分成新行，不应该使用，应该使用css属性。</td>
+</tr>
+<tr>
+<td align="center">s</td>
+<td align="center">删除线，提倡使用 <del> 和 <ins> 元素。</td>
+</tr>
+<tr>
+<td align="center">samp</td>
+<td align="center">标识计算机程序输出。</td>
+</tr>
+<tr>
+<td align="center">tt</td>
+<td align="center">电报文本元素。</td>
+</tr>
+<tr>
+<td align="center">var</td>
+<td align="center">表示变量的名称，或者由用户提供的值。</td>
+</tr>
+<tr>
+<td align="center">wbr</td>
+<td align="center">一个文本中的位置，其中浏览器可以选择来换行。</td>
+</tr>
+<tr>
+<td align="center">rp</td>
+<td align="center">。</td>
+</tr>
+<tr>
+<td align="center">rt</td>
+<td align="center">。</td>
+</tr>
+<tr>
+<td align="center">rtc</td>
+<td align="center">。</td>
+</tr>
+<tr>
+<td align="center">ruby</td>
+<td align="center">。</td>
+</tr>
+</tbody></table>
+</li>
+<li><p>图片和多媒体</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">img</span>&gt;</span><span class="tag">&lt;<span class="name">audio</span>&gt;</span> <span class="tag">&lt;<span class="name">video</span>&gt;</span><span class="tag">&lt;<span class="name">track</span>&gt;</span><span class="tag">&lt;<span class="name">map</span>&gt;</span><span class="tag">&lt;<span class="name">area</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<table>
+<thead>
+<tr>
+<th align="center">元素</th>
+<th align="center">作用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">img</td>
+<td align="center">图片。</td>
+</tr>
+<tr>
+<td align="center">audio</td>
+<td align="center">音频内容。</td>
+</tr>
+<tr>
+<td align="center">video</td>
+<td align="center">视频内容。</td>
+</tr>
+<tr>
+<td align="center">track</td>
+<td align="center">被当作媒体元素 <code>&lt;audio&gt;</code> 和 <code>&lt;video&gt;</code> 的子元素来使用。</td>
+</tr>
+<tr>
+<td align="center">map</td>
+<td align="center">与 <area> 属性一起使用来定义一个图像映射(一个可点击的链接区域)。</td>
+</tr>
+<tr>
+<td align="center">area</td>
+<td align="center">在图片上定义一个热点区域，可以关联一个超链接。<area>元素仅在<map>元素内部使用。</td>
+</tr>
+</tbody></table>
+</li>
+<li><p>内嵌内容</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">iframe</span>&gt;</span>、<span class="tag">&lt;<span class="name">embed</span>&gt;</span>、<span class="tag">&lt;<span class="name">object</span>&gt;</span> 、<span class="tag">&lt;<span class="name">param</span>&gt;</span>、<span class="tag">&lt;<span class="name">picture</span>&gt;</span>、<span class="tag">&lt;<span class="name">source</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<table>
+<thead>
+<tr>
+<th align="center">元素</th>
+<th align="center">作用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">iframe</td>
+<td align="center">表示嵌套的浏览上下文，有效地将另一个HTML页面嵌入到当前页面中。</td>
+</tr>
+<tr>
+<td align="center">embel</td>
+<td align="center">将外部内容嵌入文档中的指定位置。</td>
+</tr>
+<tr>
+<td align="center">object</td>
+<td align="center">表示引入一个外部资源。</td>
+</tr>
+<tr>
+<td align="center">param</td>
+<td align="center">定义了<code>&lt;object&gt;</code>的参数。</td>
+</tr>
+<tr>
+<td align="center">picture</td>
+<td align="center">容器，用来为其内部特定的 <code>&lt;img&gt;</code> 元素提供多样的 <source> 元素。</td>
+</tr>
+<tr>
+<td align="center">source</td>
+<td align="center">资源。</td>
+</tr>
+</tbody></table>
+</li>
+<li><p>脚本</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">canvas</span>&gt;</span>、<span class="tag">&lt;<span class="name">noscript</span>&gt;</span>、<span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<table>
+<thead>
+<tr>
+<th align="center">元素</th>
+<th align="center">作用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">canvas</td>
+<td align="center">通过脚本（通常是JavaScript）绘制图形。</td>
+</tr>
+<tr>
+<td align="center">noscript</td>
+<td align="center">替代未执行脚本。</td>
+</tr>
+<tr>
+<td align="center">script</td>
+<td align="center">用于嵌入或引用可执行脚本。</td>
+</tr>
+</tbody></table>
+</li>
+<li><p>编辑标识</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">del</span>&gt;</span>、<span class="tag">&lt;<span class="name">ins</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<table>
+<thead>
+<tr>
+<th align="center">元素</th>
+<th align="center">作用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">del</td>
+<td align="center">表示一些被从文档中删除的文字内容。</td>
+</tr>
+<tr>
+<td align="center">ins</td>
+<td align="center">定义已经被插入文档中的文本。</td>
+</tr>
+</tbody></table>
+</li>
+<li><p>表格内容</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;table&gt;、&lt;caption&gt;、&lt;thead&gt;、&lt;tbody&gt;、&lt;tfoot&gt;、&lt;tr&gt;、、&lt;col&gt;&lt;colgroup&gt;、&lt;th&gt;、&lt;td&gt;</span><br></pre></td></tr></table></figure>
+<table>
+<thead>
+<tr>
+<th align="center">元素</th>
+<th align="center">作用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">table</td>
+<td align="center">表格。</td>
+</tr>
+<tr>
+<td align="center">caption</td>
+<td align="center">表格的标题，通常作为 <table> 的第一个子元素出现。</td>
+</tr>
+<tr>
+<td align="center">thead</td>
+<td align="center">表格页眉。</td>
+</tr>
+<tr>
+<td align="center">tbody</td>
+<td align="center">表格主体。</td>
+</tr>
+<tr>
+<td align="center">tfoot</td>
+<td align="center">表格页脚。</td>
+</tr>
+<tr>
+<td align="center">tr</td>
+<td align="center">行。</td>
+</tr>
+<tr>
+<td align="center">col</td>
+<td align="center">列， 通常位于<colgroup>元素内。</td>
+</tr>
+<tr>
+<td align="center">colgroup</td>
+<td align="center">表格列组。</td>
+</tr>
+<tr>
+<td align="center">th</td>
+<td align="center">表头。</td>
+</tr>
+<tr>
+<td align="center">td</td>
+<td align="center">表格单元。</td>
+</tr>
+</tbody></table>
+</li>
+<li><p>表单</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;form&gt; 、&lt;input&gt;、&lt;textarea&gt; 、&lt;label&gt;、&lt;button&gt;、&lt;datalist&gt;、&lt;fieldset&gt;、&lt;legend&gt;、&lt;meter&gt;、&lt;optgroup&gt;、&lt;option&gt;、&lt;output&gt;、&lt;progress&gt;、&lt;select&gt;</span><br></pre></td></tr></table></figure>
+<table>
+<thead>
+<tr>
+<th align="center">元素</th>
+<th align="center">作用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">form</td>
+<td align="center">表单。</td>
+</tr>
+<tr>
+<td align="center">input</td>
+<td align="center">输入域。</td>
+</tr>
+<tr>
+<td align="center">textarea</td>
+<td align="center">多行文本域。</td>
+</tr>
+<tr>
+<td align="center">label</td>
+<td align="center">标题。</td>
+</tr>
+<tr>
+<td align="center">button</td>
+<td align="center">按钮。</td>
+</tr>
+<tr>
+<td align="center">datalist</td>
+<td align="center">包含了一组<option>元素,这些元素表示其它表单控件可选值。</td>
+</tr>
+<tr>
+<td align="center">fieldset</td>
+<td align="center">一组相关的表单元素，并使用外框包含起。</td>
+</tr>
+<tr>
+<td align="center">legend</td>
+<td align="center">表示它的父元素<fieldset>的内容的标题。</td>
+</tr>
+<tr>
+<td align="center">meter</td>
+<td align="center">显示已知范围的标量值或者分数值。</td>
+</tr>
+<tr>
+<td align="center">optgroup</td>
+<td align="center">一个 <select> 元素中的一组选项。</td>
+</tr>
+<tr>
+<td align="center">option</td>
+<td align="center">用于定义在<select>,  <optgroup> 或<datalist> 元素中包含的项。</td>
+</tr>
+<tr>
+<td align="center">output</td>
+<td align="center">表示计算或用户操作的结果。</td>
+</tr>
+<tr>
+<td align="center">progress</td>
+<td align="center">进度条。</td>
+</tr>
+<tr>
+<td align="center">select</td>
+<td align="center">选项菜单。</td>
+</tr>
+</tbody></table>
+</li>
+<li><p>交互元素</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;details&gt;、&lt;summary&gt;、&lt;dialog&gt;、&lt;menu&gt;</span><br></pre></td></tr></table></figure>
+<table>
+<thead>
+<tr>
+<th align="center">元素</th>
+<th align="center">作用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">details&gt;</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">summary&gt; 用作 一个<details>元素的一个内容的摘要，标题或图例。</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">dialog&gt; 对话框</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">menu&gt; 菜单</td>
+<td align="center"></td>
+</tr>
+</tbody></table>
+</li>
+<li><p>Web 组件</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;slot&gt;、&lt;template&gt;</span><br></pre></td></tr></table></figure>
+<table>
+<thead>
+<tr>
+<th align="center">元素</th>
+<th align="center">作用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center"><slot> web组件技术的一部分，slot是web组件的一个占位符</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center"><template> 用于保存客户端内容的机制</td>
+<td align="center"></td>
+</tr>
+</tbody></table>
+</li>
+<li><p>过时的和弃用的元素:<acronym><applet><basefont><bgsound><big><blink><center><command><content><dir><element><font><frame><frameset><image><isindex><keygen><listing><marquee><menuitem><multicol><nextid><nobr><noembed><noframes><plaintext><spacer><strike><shadow><tt><xmp></p>
+</li>
+</ol>]]></content>
+      <categories>
+        <category>html</category>
+      </categories>
+  </entry>
+  <entry>
     <title>html概述</title>
     <url>/2020/01/30/html%E6%A6%82%E8%BF%B0/</url>
     <content><![CDATA[<h1 id="html基础"><a href="#html基础" class="headerlink" title="html基础"></a>html基础</h1><hr>
