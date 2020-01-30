@@ -4,9 +4,10 @@
     <title>浏览器相关知识</title>
     <url>/2020/01/30/html%E6%A0%87%E7%AD%BE/</url>
     <content><![CDATA[<h1 id="HTML的基本标签"><a href="#HTML的基本标签" class="headerlink" title="HTML的基本标签"></a>HTML的基本标签</h1><hr>
+<p>本文根据 <a href="https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element" target="_blank" rel="noopener">html元素参考</a> 整理得来，作为笔记使用。</p>
 <ol>
 <li><p>根元素</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span> 、<span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <table>
 <thead>
 <tr>
@@ -18,9 +19,13 @@
 <td align="center">html</td>
 <td align="center">HTML文档的根。</td>
 </tr>
+<tr>
+<td align="center">body</td>
+<td align="center">分区根元素，表示文档的内容。</td>
+</tr>
 </tbody></table>
 </li>
-<li><p>文档元数据</p>
+<li><p>文档元数据<br>元数据（Metadata）含有页面的相关信息，包括样式、脚本及数据，能帮助一些软件（例如 <a href="https://developer.mozilla.org/en-US/docs/Glossary/search_engine" target="_blank" rel="noopener">搜索引擎</a>、<a href="https://developer.mozilla.org/en-US/docs/Glossary/Browser" target="_blank" rel="noopener">浏览器</a> 等等）更好地运用和渲染页面。对于样式和脚本的元数据，可以直接在网页里定义，也可以链接到包含相关信息的外部文件。</p>
 <figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">link</span>&gt;</span>、<span class="tag">&lt;<span class="name">meta</span>&gt;</span>、<span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="xml">、<span class="tag">&lt;<span class="name">style</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
 <table>
 <thead>
@@ -55,7 +60,7 @@
 </tr>
 </tbody></table>
 </li>
-<li><p>内容分区</p>
+<li><p>内容分区<br>内容分区元素可以将内容从逻辑上进行组织划分，来为页面内容创建明确的大纲，以便区分各个章节的内容。</p>
 <figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">header</span>&gt;</span>、<span class="tag">&lt;<span class="name">nav</span>&gt;</span>、 <span class="tag">&lt;<span class="name">section</span>&gt;</span>、<span class="tag">&lt;<span class="name">aside</span>&gt;</span> 、<span class="tag">&lt;<span class="name">footer</span>&gt;</span> 、<span class="tag">&lt;<span class="name">h1</span>&gt;</span>~<span class="tag">&lt;<span class="name">h6</span>&gt;</span> 、<span class="tag">&lt;<span class="name">article</span>&gt;</span> 、<span class="tag">&lt;<span class="name">address</span>&gt;</span>、<span class="tag">&lt;<span class="name">hgroup</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <table>
 <thead>
@@ -102,7 +107,7 @@
 </tr>
 </tbody></table>
 </li>
-<li><p>文本内容</p>
+<li><p>文本内容<br>使用 HTML 文本内容元素来组织在开标签 <code>&lt;body&gt;</code> 和闭标签 <code>&lt;/body&gt;</code> 里的块或章节的内容。这些元素能标识内容的宗旨或结构，而这对于 accessibility 和 SEO 很重要。</p>
 <figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">main</span>&gt;</span>、<span class="tag">&lt;<span class="name">div</span>&gt;</span>、<span class="tag">&lt;<span class="name">p</span>&gt;</span>、<span class="tag">&lt;<span class="name">pre</span>&gt;</span>、<span class="tag">&lt;<span class="name">ol</span>&gt;</span>、 <span class="tag">&lt;<span class="name">ul</span>&gt;</span>、<span class="tag">&lt;<span class="name">li</span>&gt;</span>、<span class="tag">&lt;<span class="name">dl</span>&gt;</span> 、<span class="tag">&lt;<span class="name">dt</span>&gt;</span>、<span class="tag">&lt;<span class="name">dd</span>&gt;</span>、<span class="tag">&lt;<span class="name">figure</span>&gt;</span> 、<span class="tag">&lt;<span class="name">figcaption</span>&gt;</span>、<span class="tag">&lt;<span class="name">blockquote</span>&gt;</span> 、<span class="tag">&lt;<span class="name">hr</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <table>
 <thead>
@@ -169,7 +174,7 @@
 </tr>
 </tbody></table>
 </li>
-<li><p>内联文本语义:</p>
+<li><p>内联文本语义<br>使用 HTML 内联文本语义（Inline text semantics）定义一个单词、一行内容，或任意文字的语义、结构或样式。</p>
 <figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">span</span>&gt;</span>、<span class="tag">&lt;<span class="name">a</span>&gt;</span>、<span class="tag">&lt;<span class="name">strong</span>&gt;</span>、<span class="tag">&lt;<span class="name">em</span>&gt;</span>、<span class="tag">&lt;<span class="name">q</span>&gt;</span>、<span class="tag">&lt;<span class="name">br</span>&gt;</span>、<span class="tag">&lt;<span class="name">mark</span>&gt;</span>、<span class="tag">&lt;<span class="name">code</span>&gt;</span>、<span class="tag">&lt;<span class="name">abbr</span>&gt;</span>、<span class="tag">&lt;<span class="name">b</span>&gt;</span>、<span class="tag">&lt;<span class="name">bdi</span>&gt;</span>、<span class="tag">&lt;<span class="name">bdo</span>&gt;</span>、<span class="tag">&lt;<span class="name">sub</span>&gt;</span>、<span class="tag">&lt;<span class="name">sup</span>&gt;</span>、<span class="tag">&lt;<span class="name">time</span>&gt;</span>、<span class="tag">&lt;<span class="name">i</span>&gt;</span>、<span class="tag">&lt;<span class="name">u</span>&gt;</span>、<span class="tag">&lt;<span class="name">cite</span>&gt;</span>、<span class="tag">&lt;<span class="name">data</span>&gt;</span>、<span class="tag">&lt;<span class="name">kbd</span>&gt;</span>、<span class="tag">&lt;<span class="name">nobr</span>&gt;</span>、<span class="tag">&lt;<span class="name">s</span>&gt;</span>、<span class="tag">&lt;<span class="name">samp</span>&gt;</span>、<span class="tag">&lt;<span class="name">tt</span>&gt;</span>、<span class="tag">&lt;<span class="name">var</span>&gt;</span>、<span class="tag">&lt;<span class="name">wbr</span>&gt;</span>、<span class="tag">&lt;<span class="name">rp</span>&gt;</span>、<span class="tag">&lt;<span class="name">rt</span>&gt;</span>、<span class="tag">&lt;<span class="name">rtc</span>&gt;</span>、<span class="tag">&lt;<span class="name">ruby</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <table>
 <thead>
@@ -308,7 +313,7 @@
 </tr>
 </tbody></table>
 </li>
-<li><p>图片和多媒体</p>
+<li><p>图片和多媒体<br>HTML 支持各种多媒体资源，例如图像、音频和视频。</p>
 <figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">img</span>&gt;</span><span class="tag">&lt;<span class="name">audio</span>&gt;</span> <span class="tag">&lt;<span class="name">video</span>&gt;</span><span class="tag">&lt;<span class="name">track</span>&gt;</span><span class="tag">&lt;<span class="name">map</span>&gt;</span><span class="tag">&lt;<span class="name">area</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <table>
 <thead>
@@ -343,7 +348,7 @@
 </tr>
 </tbody></table>
 </li>
-<li><p>内嵌内容</p>
+<li><p>内嵌内容<br>除了常规的多媒体内容，HTML 可以包括各种其他的内容，即使它并不容易交互。</p>
 <figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">iframe</span>&gt;</span>、<span class="tag">&lt;<span class="name">embed</span>&gt;</span>、<span class="tag">&lt;<span class="name">object</span>&gt;</span> 、<span class="tag">&lt;<span class="name">param</span>&gt;</span>、<span class="tag">&lt;<span class="name">picture</span>&gt;</span>、<span class="tag">&lt;<span class="name">source</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <table>
 <thead>
@@ -378,7 +383,7 @@
 </tr>
 </tbody></table>
 </li>
-<li><p>脚本</p>
+<li><p>脚本<br>为了创建动态内容和 Web 应用程序，HTML 支持使用脚本语言，最突出的就是 JavaScript。某些元素用于支持此功能。</p>
 <figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">canvas</span>&gt;</span>、<span class="tag">&lt;<span class="name">noscript</span>&gt;</span>、<span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <table>
 <thead>
@@ -421,7 +426,7 @@
 </tbody></table>
 </li>
 <li><p>表格内容</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;table&gt;、&lt;caption&gt;、&lt;thead&gt;、&lt;tbody&gt;、&lt;tfoot&gt;、&lt;tr&gt;、、&lt;col&gt;&lt;colgroup&gt;、&lt;th&gt;、&lt;td&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">table</span>&gt;</span>、<span class="tag">&lt;<span class="name">caption</span>&gt;</span>、<span class="tag">&lt;<span class="name">thead</span>&gt;</span>、<span class="tag">&lt;<span class="name">tbody</span>&gt;</span>、<span class="tag">&lt;<span class="name">tfoot</span>&gt;</span>、<span class="tag">&lt;<span class="name">tr</span>&gt;</span>、、<span class="tag">&lt;<span class="name">col</span>&gt;</span><span class="tag">&lt;<span class="name">colgroup</span>&gt;</span>、<span class="tag">&lt;<span class="name">th</span>&gt;</span>、<span class="tag">&lt;<span class="name">td</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <table>
 <thead>
 <tr>
@@ -472,7 +477,7 @@
 </tbody></table>
 </li>
 <li><p>表单</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;form&gt; 、&lt;input&gt;、&lt;textarea&gt; 、&lt;label&gt;、&lt;button&gt;、&lt;datalist&gt;、&lt;fieldset&gt;、&lt;legend&gt;、&lt;meter&gt;、&lt;optgroup&gt;、&lt;option&gt;、&lt;output&gt;、&lt;progress&gt;、&lt;select&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">form</span>&gt;</span> 、<span class="tag">&lt;<span class="name">input</span>&gt;</span>、<span class="tag">&lt;<span class="name">textarea</span>&gt;</span> 、<span class="tag">&lt;<span class="name">label</span>&gt;</span>、<span class="tag">&lt;<span class="name">button</span>&gt;</span>、<span class="tag">&lt;<span class="name">datalist</span>&gt;</span>、<span class="tag">&lt;<span class="name">fieldset</span>&gt;</span>、<span class="tag">&lt;<span class="name">legend</span>&gt;</span>、<span class="tag">&lt;<span class="name">meter</span>&gt;</span>、<span class="tag">&lt;<span class="name">optgroup</span>&gt;</span>、<span class="tag">&lt;<span class="name">option</span>&gt;</span>、<span class="tag">&lt;<span class="name">output</span>&gt;</span>、<span class="tag">&lt;<span class="name">progress</span>&gt;</span>、<span class="tag">&lt;<span class="name">select</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <table>
 <thead>
 <tr>
@@ -539,7 +544,7 @@
 </tbody></table>
 </li>
 <li><p>交互元素</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;details&gt;、&lt;summary&gt;、&lt;dialog&gt;、&lt;menu&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">details</span>&gt;</span>、<span class="tag">&lt;<span class="name">summary</span>&gt;</span>、<span class="tag">&lt;<span class="name">dialog</span>&gt;</span>、<span class="tag">&lt;<span class="name">menu</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <table>
 <thead>
 <tr>
@@ -548,25 +553,25 @@
 </tr>
 </thead>
 <tbody><tr>
-<td align="center">details&gt;</td>
-<td align="center"></td>
+<td align="center">details</td>
+<td align="center">创建一个挂件，仅在被切换成展开状态时，它才会显示内含的信息。</td>
 </tr>
 <tr>
-<td align="center">summary&gt; 用作 一个<details>元素的一个内容的摘要，标题或图例。</td>
-<td align="center"></td>
+<td align="center">summary</td>
+<td align="center">用作一个<code>&lt;details&gt;</code>元素的一个内容的摘要，标题或图例。</td>
 </tr>
 <tr>
-<td align="center">dialog&gt; 对话框</td>
-<td align="center"></td>
+<td align="center">dialog</td>
+<td align="center">对话框。</td>
 </tr>
 <tr>
-<td align="center">menu&gt; 菜单</td>
-<td align="center"></td>
+<td align="center">menu</td>
+<td align="center">菜单。</td>
 </tr>
 </tbody></table>
 </li>
 <li><p>Web 组件</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;slot&gt;、&lt;template&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">slot</span>&gt;</span>、<span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <table>
 <thead>
 <tr>
@@ -575,17 +580,17 @@
 </tr>
 </thead>
 <tbody><tr>
-<td align="center"><slot> web组件技术的一部分，slot是web组件的一个占位符</td>
-<td align="center"></td>
+<td align="center">slot</td>
+<td align="center">web组件技术的一部分，slot是web组件的一个占位符。</td>
 </tr>
 <tr>
-<td align="center"><template> 用于保存客户端内容的机制</td>
-<td align="center"></td>
+<td align="center">template</td>
+<td align="center">用于保存客户端内容的机制。</td>
 </tr>
 </tbody></table>
 </li>
-<li><p>过时的和弃用的元素:<acronym><applet><basefont><bgsound><big><blink><center><command><content><dir><element><font><frame><frameset><image><isindex><keygen><listing><marquee><menuitem><multicol><nextid><nobr><noembed><noframes><plaintext><spacer><strike><shadow><tt><xmp></p>
-</li>
+<li><p>过时的和弃用的元素</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">acronym</span>&gt;</span>、<span class="tag">&lt;<span class="name">applet</span>&gt;</span>、<span class="tag">&lt;<span class="name">basefont</span>&gt;</span>、<span class="tag">&lt;<span class="name">bgsound</span>&gt;</span>、<span class="tag">&lt;<span class="name">big</span>&gt;</span>、<span class="tag">&lt;<span class="name">blink</span>&gt;</span>、<span class="tag">&lt;<span class="name">center</span>&gt;</span>、<span class="tag">&lt;<span class="name">command</span>&gt;</span>、<span class="tag">&lt;<span class="name">content</span>&gt;</span>、<span class="tag">&lt;<span class="name">dir</span>&gt;</span>、<span class="tag">&lt;<span class="name">element</span>&gt;</span>、<span class="tag">&lt;<span class="name">font</span>&gt;</span>、<span class="tag">&lt;<span class="name">frame</span>&gt;</span>、<span class="tag">&lt;<span class="name">frameset</span>&gt;</span>、<span class="tag">&lt;<span class="name">image</span>&gt;</span>、<span class="tag">&lt;<span class="name">isindex</span>&gt;</span>、<span class="tag">&lt;<span class="name">keygen</span>&gt;</span>、<span class="tag">&lt;<span class="name">listing</span>&gt;</span>、<span class="tag">&lt;<span class="name">marquee</span>&gt;</span>、<span class="tag">&lt;<span class="name">menuitem</span>&gt;</span>、<span class="tag">&lt;<span class="name">multicol</span>&gt;</span>、<span class="tag">&lt;<span class="name">nextid</span>&gt;</span>、<span class="tag">&lt;<span class="name">nobr</span>&gt;</span>、<span class="tag">&lt;<span class="name">noembed</span>&gt;</span>、<span class="tag">&lt;<span class="name">noframes</span>&gt;</span>、<span class="tag">&lt;<span class="name">plaintext</span>&gt;</span>、<span class="tag">&lt;<span class="name">spacer</span>&gt;</span>、<span class="tag">&lt;<span class="name">strike</span>&gt;</span>、<span class="tag">&lt;<span class="name">shadow</span>&gt;</span>、<span class="tag">&lt;<span class="name">tt</span>&gt;</span>、<span class="tag">&lt;<span class="name">xmp</span>&gt;</span></span><br></pre></td></tr></table></figure></li>
 </ol>]]></content>
       <categories>
         <category>html</category>
