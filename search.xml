@@ -440,7 +440,7 @@
 </tr>
 <tr>
 <td align="center">caption</td>
-<td align="center">表格的标题，通常作为 <table> 的第一个子元素出现。</td>
+<td align="center">表格的标题，通常作为 <code>&lt;table&gt;</code> 的第一个子元素出现。</td>
 </tr>
 <tr>
 <td align="center">thead</td>
@@ -507,7 +507,7 @@
 </tr>
 <tr>
 <td align="center">datalist</td>
-<td align="center">包含了一组<option>元素,这些元素表示其它表单控件可选值。</td>
+<td align="center">包含了一组<code>&lt;option&gt;</code>元素,这些元素表示其它表单控件可选值。</td>
 </tr>
 <tr>
 <td align="center">fieldset</td>
@@ -515,7 +515,7 @@
 </tr>
 <tr>
 <td align="center">legend</td>
-<td align="center">表示它的父元素<fieldset>的内容的标题。</td>
+<td align="center">表示它的父元素<code>&lt;fieldset&gt;</code>的内容的标题。</td>
 </tr>
 <tr>
 <td align="center">meter</td>
@@ -523,11 +523,11 @@
 </tr>
 <tr>
 <td align="center">optgroup</td>
-<td align="center">一个 <select> 元素中的一组选项。</td>
+<td align="center">一个 <code>&lt;select&gt;</code>元素中的一组选项。</td>
 </tr>
 <tr>
 <td align="center">option</td>
-<td align="center">用于定义在<select>,  <optgroup> 或<datalist> 元素中包含的项。</td>
+<td align="center">用于定义在<code>&lt;select&gt;</code>,  <code>&lt;optgroup&gt;</code>或<code>&lt;datalist&gt;</code>元素中包含的项。</td>
 </tr>
 <tr>
 <td align="center">output</td>
