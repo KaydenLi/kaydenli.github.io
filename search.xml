@@ -13,69 +13,64 @@
 <li>Blink内核：由Google和Opera Software基于Webkit引擎研发的排版引擎，内置于Chrome浏览器之中。代表浏览器 Opera、Chrome。<br>总结为如下的表格：<table>
 <thead>
 <tr>
-<th>主流浏览器</th>
-<th>内核</th>
+<th align="center">主流浏览器</th>
+<th align="center">内核</th>
 </tr>
 </thead>
 <tbody><tr>
-<td>IE -&gt; Edge</td>
-<td>trident-&gt;EdgeHTML</td>
+<td align="center">IE -&gt; Edge</td>
+<td align="center">trident-&gt;EdgeHTML</td>
 </tr>
 <tr>
-<td>Chrome</td>
-<td>webkit-&gt;blink</td>
+<td align="center">Chrome</td>
+<td align="center">webkit-&gt;blink</td>
 </tr>
 <tr>
-<td>Safari</td>
-<td>webkit</td>
+<td align="center">Safari</td>
+<td align="center">webkit</td>
 </tr>
 <tr>
-<td>Firefox</td>
-<td>Gecko</td>
+<td align="center">Firefox</td>
+<td align="center">Gecko</td>
 </tr>
 <tr>
-<td>Opera</td>
-<td>Presto-&gt;blink</td>
-</tr>
-<tr>
-<td>## js引擎</td>
-<td></td>
-</tr>
-<tr>
-<td>主流浏览器的 js 引擎</td>
-<td></td>
+<td align="center">Opera</td>
+<td align="center">Presto-&gt;blink</td>
 </tr>
 </tbody></table>
 </li>
+</ol>
+<h2 id="js引擎"><a href="#js引擎" class="headerlink" title="js引擎"></a>js引擎</h2><p>   主流浏览器的 js 引擎</p>
+<ol>
 <li>Chakra，是在IE9上使用的js引擎。</li>
 <li>SpriderMonkey，TraceMonkey，JaegerMonkey这些运用在Mozilla FireFox上。</li>
 <li>v8，应用于Chrome，遨游上。</li>
 <li>Nitro，应用于Safari上。<br>总结如下表:<table>
 <thead>
 <tr>
-<th>主流浏览器</th>
-<th>js引擎</th>
+<th align="center">主流浏览器</th>
+<th align="center">js引擎</th>
 </tr>
 </thead>
 <tbody><tr>
-<td>IE -&gt; Edge</td>
-<td>JScript（IE3.0-IE8.0） /IE9+ Chakra</td>
+<td align="center">IE -&gt; Edge</td>
+<td align="center">JScript（IE3.0-IE8.0） /IE9+ Chakra</td>
 </tr>
 <tr>
-<td>Chrome</td>
-<td>V8</td>
+<td align="center">Chrome</td>
+<td align="center">V8</td>
 </tr>
 <tr>
-<td>Safari</td>
-<td>Nitro（4-）</td>
+<td align="center">Safari</td>
+<td align="center">Nitro（4-）</td>
 </tr>
 <tr>
-<td>Firefox</td>
-<td>SpiderMonkey（1.0-3.0）/ TraceMonkey（3.5-3.6）/ JaegerMonkey（4.0-）</td>
+<td align="center">Firefox</td>
+<td align="center">SpiderMonkey（1.0-3.0）/ TraceMonkey（3.5-3.6）/ JaegerMonkey（4.0-）</td>
 </tr>
 <tr>
-<td>Opera</td>
-<td>Linear A（4.0-6.1）/ Linear B（7.0-9.2）/ Futhark（9.5-10.2）/ Carakan（10.5-）</td>
+<td align="center">Opera</td>
+<td align="center">Linear A（4.0-6.1）/ Linear B（7.0-9.2）/ Futhark（9.5-10.2）/ Carakan（10.5-）</td>
 </tr>
 </tbody></table>
 </li>
