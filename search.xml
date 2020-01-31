@@ -2,7 +2,7 @@
 <search>
   <entry>
     <title>html标签</title>
-    <url>/2020/01/30/html%E6%A0%87%E7%AD%BE/</url>
+    <url>/2020/01/31/html%E6%A0%87%E7%AD%BE/</url>
     <content><![CDATA[<h1 id="HTML的基本标签"><a href="#HTML的基本标签" class="headerlink" title="HTML的基本标签"></a>HTML的基本标签</h1><hr>
 <p>本文根据 <a href="https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element" target="_blank" rel="noopener">html元素参考</a> 整理得来，作为笔记使用。</p>
 <ol>
@@ -25,8 +25,8 @@
 </tr>
 </tbody></table>
 </li>
-<li><p>文档元数据<br>元数据（Metadata）含有页面的相关信息，包括样式、脚本及数据，能帮助一些软件（例如 <a href="https://developer.mozilla.org/en-US/docs/Glossary/search_engine" target="_blank" rel="noopener">搜索引擎</a>、<a href="https://developer.mozilla.org/en-US/docs/Glossary/Browser" target="_blank" rel="noopener">浏览器</a> 等等）更好地运用和渲染页面。对于样式和脚本的元数据，可以直接在网页里定义，也可以链接到包含相关信息的外部文件。</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">link</span>&gt;</span>、<span class="tag">&lt;<span class="name">meta</span>&gt;</span>、<span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="xml">、<span class="tag">&lt;<span class="name">style</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
+<li><p>文档元数据<br>元数据含有页面的相关信息，包括样式、脚本及数据，能帮助一些软件（例如 <a href="https://developer.mozilla.org/en-US/docs/Glossary/search_engine" target="_blank" rel="noopener">搜索引擎</a>、<a href="https://developer.mozilla.org/en-US/docs/Glossary/Browser" target="_blank" rel="noopener">浏览器</a> 等等）更好地运用和渲染页面。对于样式和脚本的元数据，可以直接在网页里定义，也可以链接到包含相关信息的外部文件。</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span>、<span class="tag">&lt;<span class="name">title</span>&gt;</span>、<span class="tag">&lt;<span class="name">base</span>&gt;</span>、<span class="tag">&lt;<span class="name">link</span>&gt;</span>、<span class="tag">&lt;<span class="name">meta</span>&gt;</span>、<span class="tag">&lt;<span class="name">style</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <table>
 <thead>
 <tr>
@@ -100,10 +100,6 @@
 <tr>
 <td align="center">address</td>
 <td align="center">地址信息。</td>
-</tr>
-<tr>
-<td align="center">hgroup</td>
-<td align="center">代表一个段的标题。</td>
 </tr>
 </tbody></table>
 </li>
@@ -196,7 +192,7 @@
 <td align="center">超链接。</td>
 </tr>
 <tr>
-<td align="center">strong&gt;</td>
+<td align="center">strong</td>
 <td align="center">粗体显示。</td>
 </tr>
 <tr>
@@ -261,7 +257,7 @@
 </tr>
 <tr>
 <td align="center">data</td>
-<td align="center">将一个指定内容和机器可读的翻译联系在一起。但如果内容是与 time 或者 date 相关的，一定要使用 <time>。</td>
+<td align="center">将一个指定内容和机器可读的翻译联系在一起。</td>
 </tr>
 <tr>
 <td align="center">dfn</td>
@@ -277,7 +273,7 @@
 </tr>
 <tr>
 <td align="center">s</td>
-<td align="center">删除线，提倡使用 <del> 和 <ins> 元素。</td>
+<td align="center">删除线，提倡使用 <code>&lt;del&gt;</code> 和 <code>&lt;ins&gt;</code> 元素。</td>
 </tr>
 <tr>
 <td align="center">samp</td>
@@ -297,24 +293,24 @@
 </tr>
 <tr>
 <td align="center">rp</td>
-<td align="center">。</td>
+<td align="center">用于为那些不能使用<code>&lt;ruby&gt;</code>元素展示 ruby 注解的浏览器，提供随后的圆括号。</td>
 </tr>
 <tr>
 <td align="center">rt</td>
-<td align="center">。</td>
+<td align="center">用于描述东亚字符的发音。</td>
 </tr>
 <tr>
 <td align="center">rtc</td>
-<td align="center">。</td>
+<td align="center">包含文字的语义注解。</td>
 </tr>
 <tr>
 <td align="center">ruby</td>
-<td align="center">。</td>
+<td align="center">被用来展示东亚文字注音或字符注释。</td>
 </tr>
 </tbody></table>
 </li>
 <li><p>图片和多媒体<br>HTML 支持各种多媒体资源，例如图像、音频和视频。</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">img</span>&gt;</span><span class="tag">&lt;<span class="name">audio</span>&gt;</span> <span class="tag">&lt;<span class="name">video</span>&gt;</span><span class="tag">&lt;<span class="name">track</span>&gt;</span><span class="tag">&lt;<span class="name">map</span>&gt;</span><span class="tag">&lt;<span class="name">area</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">img</span>&gt;</span>、<span class="tag">&lt;<span class="name">audio</span>&gt;</span>、<span class="tag">&lt;<span class="name">video</span>&gt;</span>、<span class="tag">&lt;<span class="name">track</span>&gt;</span>、<span class="tag">&lt;<span class="name">map</span>&gt;</span>、<span class="tag">&lt;<span class="name">area</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <table>
 <thead>
 <tr>
@@ -340,11 +336,11 @@
 </tr>
 <tr>
 <td align="center">map</td>
-<td align="center">与 <area> 属性一起使用来定义一个图像映射(一个可点击的链接区域)。</td>
+<td align="center">与 <code>&lt;area&gt;</code> 属性一起使用来定义一个图像映射(一个可点击的链接区域)。</td>
 </tr>
 <tr>
 <td align="center">area</td>
-<td align="center">在图片上定义一个热点区域，可以关联一个超链接。<area>元素仅在<map>元素内部使用。</td>
+<td align="center">在图片上定义一个热点区域，可以关联一个超链接。<code>&lt;area&gt;</code>元素仅在<code>&lt;map&gt;</code>元素内部使用。</td>
 </tr>
 </tbody></table>
 </li>
@@ -375,7 +371,7 @@
 </tr>
 <tr>
 <td align="center">picture</td>
-<td align="center">容器，用来为其内部特定的 <code>&lt;img&gt;</code> 元素提供多样的 <source> 元素。</td>
+<td align="center">容器，用来为其内部特定的 <code>&lt;img&gt;</code> 元素提供多样的 <code>&lt;source&gt;</code> 元素。</td>
 </tr>
 <tr>
 <td align="center">source</td>
@@ -581,7 +577,7 @@
 </thead>
 <tbody><tr>
 <td align="center">slot</td>
-<td align="center">web组件技术的一部分，slot是web组件的一个占位符。</td>
+<td align="center">web 组件技术的一部分，<code>&lt;slot&gt;</code>是 web 组件的一个占位符。</td>
 </tr>
 <tr>
 <td align="center">template</td>
