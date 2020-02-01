@@ -1,6 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>websocket介绍</title>
+    <url>/2020/02/01/WebSocket%E7%AE%80%E4%BB%8B/</url>
+    <content><![CDATA[<h1 id="websocket-知识介绍"><a href="#websocket-知识介绍" class="headerlink" title="websocket 知识介绍"></a>websocket 知识介绍</h1><h2 id="1-基本概念"><a href="#1-基本概念" class="headerlink" title="1. 基本概念"></a>1. 基本概念</h2><p>   WebSocket是 HTML5 中的协议，支持持久连续连接，而 http 协议不支持持久性连接。HTTP1.0 和 HTTP1.1 都不支持持久性的链接，HTTP1.1 中的 keep-alive，将多个 http 请求合并为 1 个</p>
+<h2 id="2-WebSocket的优点"><a href="#2-WebSocket的优点" class="headerlink" title="2. WebSocket的优点"></a>2. WebSocket的优点</h2><p>   HTTP的生命周期通过 Request 来界定，也就是 Request 一个 Response，那么在 HTTP1.0 协议中，这次 http 请求就结束了。在 HTTP1.1中进行了改进，是的有一个 connection：Keep-alive，也就是说，在一个 http 连接中，可以发送多个 Request，接收多个 Response。但是必须记住，在 http 中一个 Request 只能对应有一个 Response，而且这个 Response 是被动的，不能主动发起。<br>   WebSocket 是基于 HTTP 协议的，或者说借用了HTTP 协议来完成一部分握手，在握手阶段与http是相同的。我们来看一个 websocket 握手协议的实现，基本是 2 个属性：upgrade 和 connection。</p>
+<p>基本请求如下：</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line">GET /chat HTTP/1.1</span><br><span class="line">Host: server.example.com</span><br><span class="line">Upgrade: websocket</span><br><span class="line">Connection: Upgrade</span><br><span class="line">Sec-WebSocket-Key: x3JJHMbDL1EzLkh9GBhXDw==</span><br><span class="line">Sec-WebSocket-Protocol: chat, superchat</span><br><span class="line">Sec-WebSocket-Version: 13</span><br><span class="line">Origin: http://example.com</span><br></pre></td></tr></table></figure>
+<p>多了下面2个属性：</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line">Upgrade:webSocket</span><br><span class="line">Connection:Upgrade</span><br></pre></td></tr></table></figure>
+<p>告诉服务器发送的是websocket</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line">Sec-WebSocket-Key: x3JJHMbDL1EzLkh9GBhXDw==</span><br><span class="line">Sec-WebSocket-Protocol: chat, superchat</span><br><span class="line">Sec-WebSocket-Version: 13</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>html</category>
+      </categories>
+  </entry>
+  <entry>
     <title>http与https介绍</title>
     <url>/2020/02/01/http%E4%B8%8Ehttps/</url>
     <content><![CDATA[<h1 id="http与https介绍"><a href="#http与https介绍" class="headerlink" title="http与https介绍"></a>http与https介绍</h1><h2 id="1-概述"><a href="#1-概述" class="headerlink" title="1. 概述"></a>1. 概述</h2><p>   http 即超文本传输协议，是互联网上应用最为广泛的一种网络协议，是一个客户端和服务器端请求和应答的标准（TCP），用于从 WWW 服务器传输超文本到本地浏览器的传输协议，它可以使浏览器更加高效，使网络传输减少。https 是以安全为目标的HTTP通道，https 的 SSL 加密是在传输层实现的。简单讲是HTTP的安全版，即 HTTP下加入 SSL 层，HTTPS 的安全基础是 SSL，因此加密的详细内容就需要SSL。https 协议的主要作用是建立一个信息安全通道，来确保数组的传输，确保网站的真实性。<br>   SSL(Secure Sockets Layer ，安全套接层)，及其继任者传输层安全（Transport Layer Security，TLS）是为网络通信提供安全及数据完整性的一种安全协议。TLS 与 SSL 在传输层与应用层之间对网络连接进行加密。<br>   下表介绍互联网加密协议历史：<br>|时间|版本|<br>|:–:|:–:|<br>|1994年|NetScape 公司设计了 SSL 协议的1.0版，但是未发布。|<br>|1995年|NetScape 公司发布 SSL 2.0版，很快发现有严重漏洞。|<br>|1996年|SSL 3.0 版问世，得到大规模应用。|<br>|1999年|互联网标准化组织 ISOC 接替 NetScape 公司，发布了 SSL 的升级版 TLS 1.0 版。|<br>|2006年|TLS 升级为 TLS 1.1 版。|<br>|2008年|TLS 升级为 TLS 1.2 版。最新的变动是2011年 TLS 1.2 的修订版。|<br>   目前，应用最广泛的是TLS 1.0和SSL 3.0。主流浏览器都已经实现了 TLS 1.2 的支持。TLS 1.0 通常被标示为 SSL 3.1，TLS 1.1 为 SSL 3.2，TLS 1.2 为 SSL 3.3。所谓的 HTTPS 其实是 “HTTP over SSL” 或 “HTTP over TLS”，它是 HTTP 与 SSL/TSL 的结合使用而已。SSL/TLS协议的基本过程：</p>
