@@ -1,6 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>web无障碍</title>
+    <url>/2020/02/02/web%E6%97%A0%E9%9A%9C%E7%A2%8D/</url>
+    <content><![CDATA[<h1 id="web-无障碍"><a href="#web-无障碍" class="headerlink" title="web 无障碍"></a>web 无障碍</h1><p>   能够被残障人士使用的网站才能称得上一个易用的（易访问的）网站。残障人士指的是那些带有残疾或者身体不健康的用户。</p>
+<h2 id="1-使用alt属性，例如："><a href="#1-使用alt属性，例如：" class="headerlink" title="1. 使用alt属性，例如："></a>1. 使用alt属性，例如：</h2><figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"person.jpg"</span>  <span class="attr">alt</span>=<span class="string">"this is a person"</span>/&gt;</span></span><br></pre></td></tr></table></figure>
+<p>有时候浏览器会无法显示图像。具体的原因有：</p>
+<ol>
+<li>用户关闭了图像显示。</li>
+<li>浏览器是不支持图形显示的迷你浏览器。</li>
+<li>浏览器是语音浏览器（供盲人和弱视人群使用）。<br>如果使用了alt 属性，那么浏览器至少可以显示或读出有关图像的描述。</li>
+</ol>
+<h2 id="2-使用可调节的字体大小"><a href="#2-使用可调节的字体大小" class="headerlink" title="2. 使用可调节的字体大小"></a>2. 使用可调节的字体大小</h2><p>   使用相对的字体尺寸，这样用户就能够使用浏览器菜单来改变默认的字体尺寸。</p>]]></content>
+  </entry>
+  <entry>
     <title>BOM</title>
     <url>/2020/02/02/BOM/</url>
     <content><![CDATA[<h1 id="BOM"><a href="#BOM" class="headerlink" title="BOM"></a>BOM</h1><h2 id="1-BOM的基本概念"><a href="#1-BOM的基本概念" class="headerlink" title="1. BOM的基本概念"></a>1. BOM的基本概念</h2><p>   BOM(Browser Object Mode) 就是指浏览器对象模型，是用于描述这种对象与对象之间层次关系的模型，浏览器对象模型提供了独立于内容的、可以与浏览器窗口进行互动的对象结构。BOM由多个对象组成，其中代表浏览器窗口的 Window 对象是BOM的顶层对象，其他对象都是该对象的子对象。javacsript 是通过访问 BOM对象来访问、控制、修改客户端(浏览器)的，即 BOM 提供了与浏览器交互的方法和接口；与此类似的是 DOM，它提供了处理网页内容的方法和接口。</p>
