@@ -1,6 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>position属性比较</title>
+    <url>/2020/02/03/position%E5%B1%9E%E6%80%A7%E6%AF%94%E8%BE%83/</url>
+    <content><![CDATA[<h1 id="position属性-比较"><a href="#position属性-比较" class="headerlink" title="position属性 比较"></a>position属性 比较</h1><h2 id="1-固定定位fixed"><a href="#1-固定定位fixed" class="headerlink" title="1. 固定定位fixed"></a>1. 固定定位fixed</h2><p>   元素的位置相对于浏览器窗口是固定位置，即使窗口是滚动的它也不会移动。Fixed定位使元素的位置与文档流无关，因此不占据空间。 Fixed定位的元素和其他元素重叠。</p>
+<h2 id="2-相对定位relative"><a href="#2-相对定位relative" class="headerlink" title="2. 相对定位relative"></a>2. 相对定位relative</h2><p>   如果对一个元素进行相对定位，它将出现在它所在的位置上。然后，可以通过设置垂直或水平位置，让这个元素“相对于”它的起点进行移动。 在使用相对定位时，无论是否进行移动，元素仍然占据原来的空间。因此，移动元素会导致它覆盖其它框。</p>
+<h2 id="3-绝对定位absolute"><a href="#3-绝对定位absolute" class="headerlink" title="3. 绝对定位absolute"></a>3. 绝对定位absolute</h2><p>   绝对定位的元素的位置相对于最近的已定位父元素，如果元素没有已定位的父元素，那么它的位置相对于<code>&lt;html&gt;</code>。 absolute 定位使元素的位置与文档流无关，因此不占据空间。 absolute 定位的元素和其他元素重叠。</p>
+<h2 id="4-粘性定位sticky"><a href="#4-粘性定位sticky" class="headerlink" title="4. 粘性定位sticky"></a>4. 粘性定位sticky</h2><p>   元素先按照普通文档流定位，然后相对于该元素在流中的flow root（BFC）和 containing block（最近的块级祖先元素）定位。而后，元素定位表现为在跨越特定阈值前为相对定位，之后为固定定位。</p>
+<h2 id="5-默认定位Static"><a href="#5-默认定位Static" class="headerlink" title="5. 默认定位Static"></a>5. 默认定位Static</h2><p>   默认值。没有定位，元素出现在正常的流中（忽略top, bottom, left, right 或者 z-index 声明）。</p>
+<h2 id="6-inherit"><a href="#6-inherit" class="headerlink" title="6. inherit"></a>6. inherit</h2><p>   规定应该从父元素继承position 属性的值。</p>]]></content>
+  </entry>
+  <entry>
     <title>CSS清除浮动</title>
     <url>/2020/02/03/CSS%E6%B8%85%E9%99%A4%E6%B5%AE%E5%8A%A8/</url>
     <content><![CDATA[<h1 id="CSS清除浮动"><a href="#CSS清除浮动" class="headerlink" title="CSS清除浮动"></a>CSS清除浮动</h1><h2 id="1-什么是CSS清除浮动？"><a href="#1-什么是CSS清除浮动？" class="headerlink" title="1. 什么是CSS清除浮动？"></a>1. 什么是CSS清除浮动？</h2><p>   在非IE浏览器（如Firefox）下，当容器的高度为auto，且容器的内容中有浮动（float为left或right）的元素，在这种情况下，容器的高度不能自动伸长以适应内容的高度，使得内容溢出到容器外面而影响（甚至破坏）布局的现象。这个现象叫浮动溢出，为了防止这个现象的出现而进行的CSS处理，就叫CSS清除浮动。</p>
