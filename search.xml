@@ -4,6 +4,7 @@
     <title>js之日期、Math、对象、数组</title>
     <url>/2020/02/25/js%E4%B9%8B%E6%97%A5%E6%9C%9F%E3%80%81math%E3%80%81%E5%AF%B9%E8%B1%A1%E3%80%81%E6%95%B0%E7%BB%84/</url>
     <content><![CDATA[<h1 id="js之日期、Math、对象、数组"><a href="#js之日期、Math、对象、数组" class="headerlink" title="js之日期、Math、对象、数组"></a>js之日期、Math、对象、数组</h1><h2 id="日期"><a href="#日期" class="headerlink" title="日期"></a>日期</h2><h3 id="1-创建-Date-对象的语法"><a href="#1-创建-Date-对象的语法" class="headerlink" title="1. 创建 Date 对象的语法"></a>1. 创建 Date 对象的语法</h3><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> myDate = <span class="keyword">new</span> <span class="built_in">Date</span>()</span><br></pre></td></tr></table></figure>
+
 <h3 id="2-Date属性"><a href="#2-Date属性" class="headerlink" title="2. Date属性"></a>2. Date属性</h3><table>
 <thead>
 <tr>
@@ -19,19 +20,15 @@
 <td align="center">prototype</td>
 <td align="center">使您有能力向对象添加属性和方法。</td>
 </tr>
+</tbody></table>
+<h3 id="3-Date方法"><a href="#3-Date方法" class="headerlink" title="3. Date方法"></a>3. Date方法</h3><table>
+<thead>
 <tr>
-<td align="center">### 3. Date方法</td>
-<td align="center"></td>
+<th align="center">API</th>
+<th align="center">描述</th>
 </tr>
-<tr>
-<td align="center">API</td>
-<td align="center">描述</td>
-</tr>
-<tr>
-<td align="center">:—:</td>
-<td align="center">:—:</td>
-</tr>
-<tr>
+</thead>
+<tbody><tr>
 <td align="center">Date()</td>
 <td align="center">返回当日的日期和时间。</td>
 </tr>
