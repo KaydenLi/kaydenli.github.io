@@ -1,6 +1,206 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>js之日期、Math、对象、数组</title>
+    <url>/2020/02/25/js%E4%B9%8B%E6%97%A5%E6%9C%9F%E3%80%81math%E3%80%81%E5%AF%B9%E8%B1%A1%E3%80%81%E6%95%B0%E7%BB%84/</url>
+    <content><![CDATA[<h1 id="js之日期、Math、对象、数组"><a href="#js之日期、Math、对象、数组" class="headerlink" title="js之日期、Math、对象、数组"></a>js之日期、Math、对象、数组</h1><h2 id="日期"><a href="#日期" class="headerlink" title="日期"></a>日期</h2><h3 id="1-创建-Date-对象的语法"><a href="#1-创建-Date-对象的语法" class="headerlink" title="1. 创建 Date 对象的语法"></a>1. 创建 Date 对象的语法</h3><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> myDate = <span class="keyword">new</span> <span class="built_in">Date</span>()</span><br></pre></td></tr></table></figure>
+<h3 id="2-Date属性"><a href="#2-Date属性" class="headerlink" title="2. Date属性"></a>2. Date属性</h3><table>
+<thead>
+<tr>
+<th align="center">属性</th>
+<th align="center">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">constructor</td>
+<td align="center">返回对创建此对象的 Date 函数的引用。</td>
+</tr>
+<tr>
+<td align="center">prototype</td>
+<td align="center">使您有能力向对象添加属性和方法。</td>
+</tr>
+<tr>
+<td align="center">### 3. Date方法</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">API</td>
+<td align="center">描述</td>
+</tr>
+<tr>
+<td align="center">:—:</td>
+<td align="center">:—:</td>
+</tr>
+<tr>
+<td align="center">Date()</td>
+<td align="center">返回当日的日期和时间。</td>
+</tr>
+<tr>
+<td align="center">getDate()</td>
+<td align="center">从 Date 对象返回一个月中的某一天 (1 ~ 31)。</td>
+</tr>
+<tr>
+<td align="center">getDay()</td>
+<td align="center">从 Date 对象返回一周中的某一天 (0 ~ 6)。</td>
+</tr>
+<tr>
+<td align="center">getMonth()</td>
+<td align="center">从 Date 对象返回月份 (0 ~ 11)。</td>
+</tr>
+<tr>
+<td align="center">getFullYear()</td>
+<td align="center">从 Date 对象以四位数字返回年份。</td>
+</tr>
+<tr>
+<td align="center">getYear()</td>
+<td align="center">请使用 getFullYear() 方法代替。</td>
+</tr>
+<tr>
+<td align="center">getHours()</td>
+<td align="center">返回 Date 对象的小时 (0 ~ 23)。</td>
+</tr>
+<tr>
+<td align="center">getMinutes()</td>
+<td align="center">返回 Date 对象的分钟 (0 ~ 59)。</td>
+</tr>
+<tr>
+<td align="center">getSeconds()</td>
+<td align="center">返回 Date 对象的秒数 (0 ~ 59)。</td>
+</tr>
+<tr>
+<td align="center">getMilliseconds()</td>
+<td align="center">返回 Date 对象的毫秒(0 ~ 999)。</td>
+</tr>
+<tr>
+<td align="center">getTime()</td>
+<td align="center">返回 1970 年 1 月 1 日至今的毫秒数。</td>
+</tr>
+</tbody></table>
+<h2 id="MATH"><a href="#MATH" class="headerlink" title="MATH"></a>MATH</h2><h3 id="Math方法"><a href="#Math方法" class="headerlink" title="Math方法"></a>Math方法</h3><p><code>Math.random()</code> 返回介于 <code>0</code>（包括） 与<code>1</code>（不包括） 之间的随机数；<br><code>Math.round(x)</code> 的返回值是 <code>x</code> 四舍五入为最接近的整数。<br><code>Math.abs(x)</code> 返回 <code>x</code> 的绝对（正）值。<br><code>Math.ceil(x)</code> 的返回值是 <code>x</code> 上舍入最接近的整数。<br><code>Math.floor(x)</code> 的返回值是 <code>x</code> 下舍入最接近的整数。<br><code>Math.min()</code> 和 <code>Math.max()</code> 可用于查找参数列表中的最低或最高值。</p>
+<h2 id="对象"><a href="#对象" class="headerlink" title="对象"></a>对象</h2><h3 id="对象方法"><a href="#对象方法" class="headerlink" title="对象方法"></a>对象方法</h3><p>for(key in obj){ } 方法</p>
+<h2 id="数组API"><a href="#数组API" class="headerlink" title="数组API"></a>数组API</h2><table>
+<thead>
+<tr>
+<th align="center">API</th>
+<th align="center">作用</th>
+<th align="center">改变arr</th>
+<th>返回值</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">arr.join(“,”)</td>
+<td align="center">用连接符把数组里面的元素连接成字符串</td>
+<td align="center">不会</td>
+<td>连接后的数组</td>
+</tr>
+<tr>
+<td align="center">arr.concat(“a”,”b”,arr1)</td>
+<td align="center">数组拼接</td>
+<td align="center">不会</td>
+<td>拼接后的数组</td>
+</tr>
+<tr>
+<td align="center">arr.slice(start[,end])</td>
+<td align="center">数组截取。含头不含尾。 支持负数，表示倒数第几个</td>
+<td align="center">不会</td>
+<td>截取后的数组</td>
+</tr>
+<tr>
+<td align="center">arr.splice(start,n[,value1,value2…])</td>
+<td align="center">删除、插入、替换</td>
+<td align="center">会</td>
+<td>所有被删除元素组成的子数组</td>
+</tr>
+<tr>
+<td align="center">arr.reverse()</td>
+<td align="center">翻转数组</td>
+<td align="center">会</td>
+<td>翻转后的数组</td>
+</tr>
+<tr>
+<td align="center">arr.sort()</td>
+<td align="center">排序</td>
+<td align="center">会</td>
+<td>排序后的数组</td>
+</tr>
+<tr>
+<td align="center">arr.indexOf(value[,from])或arr.lastIndexOf(value[,from])</td>
+<td align="center">查找元素在数组中的位置</td>
+<td align="center">不会</td>
+<td>查找元素所在位置，找不到时返回<code>-1</code></td>
+</tr>
+<tr>
+<td align="center">arr.some(function(value,index,arr){ return value &gt; 7; })</td>
+<td align="center">判断数组中有没有符合条件的元素，只要遇到符合条件的就退出循环</td>
+<td align="center">不会</td>
+<td><code>Boolean</code>值</td>
+</tr>
+<tr>
+<td align="center">arr.every(function(value,index,arr){return value &gt; 7;})</td>
+<td align="center">判断数组中的元素是否都符合条件</td>
+<td align="center">不会</td>
+<td><code>Boolean</code>值</td>
+</tr>
+<tr>
+<td align="center">arr.filter(function(value,index,arr){return value &gt; 7;})</td>
+<td align="center">过滤数组</td>
+<td align="center">不会</td>
+<td>符合条件的元素组成的新数组</td>
+</tr>
+<tr>
+<td align="center">arr.forEach(function(value,index,arr){})</td>
+<td align="center">遍历数组</td>
+<td align="center">可能会</td>
+<td><code>undefined</code></td>
+</tr>
+<tr>
+<td align="center">arr.map(function(value,index,arr){})</td>
+<td align="center">遍历数组</td>
+<td align="center">可能会</td>
+<td>调用函数处理后的数组</td>
+</tr>
+<tr>
+<td align="center">arr.reduce(function(prev,value,index,arr){return prev + value; })</td>
+<td align="center"><code>prev</code>是之前那些元素的和</td>
+<td align="center">不会</td>
+<td>数组里面所有元素相加的和</td>
+</tr>
+<tr>
+<td align="center">String(arr)或arr.toString()</td>
+<td align="center">将数组中的元素用逗号连接成字符串，类似于<code>arr.join(&quot;,&quot;)</code></td>
+<td align="center">不会</td>
+<td>字符串</td>
+</tr>
+<tr>
+<td align="center">arr.unshift(value)</td>
+<td align="center">数组的最开头插入元素</td>
+<td align="center">会</td>
+<td>新数组的长度</td>
+</tr>
+<tr>
+<td align="center">arr.shift()</td>
+<td align="center">从数组最开头删除元素</td>
+<td align="center">会</td>
+<td>被弹出的元素</td>
+</tr>
+<tr>
+<td align="center">arr.push(value1[,value2,arr1])</td>
+<td align="center">在数组末尾追加元素，追加进去的数组不会被打散</td>
+<td align="center">会</td>
+<td>新数组的长度</td>
+</tr>
+<tr>
+<td align="center">arr.pop()</td>
+<td align="center">从数组最末尾删除元素</td>
+<td align="center">会</td>
+<td>被弹出的元素</td>
+</tr>
+</tbody></table>]]></content>
+      <categories>
+        <category>js</category>
+      </categories>
+  </entry>
+  <entry>
     <title>js基础知识点总结</title>
     <url>/2020/02/25/js%E7%9F%A5%E8%AF%86%E7%82%B9%E6%80%BB%E7%BB%93/</url>
     <content><![CDATA[<h1 id="js-基础知识点总结"><a href="#js-基础知识点总结" class="headerlink" title="js 基础知识点总结"></a>js 基础知识点总结</h1><h2 id="1-数据类型"><a href="#1-数据类型" class="headerlink" title="1. 数据类型"></a>1. 数据类型</h2><p>   数据类型分为值类型和引用类型。<br>   值类型包括（也称为基本类型）：字符串（<code>String</code>）、数字(<code>Number</code>)、布尔(<code>Boolean</code>)、空（<code>Null</code>）、未定义（<code>Undefined</code>）、<code>Symbol</code>。<code>Symbol</code> 是 <code>ES6</code> 引入了一种新的原始数据类型，表示独一无二的值。<br>   引用数据类型包括：对象(Object)、数组(Array)、函数(Function)。<br>   基本类型的变量值是存放在栈内存（Stack）中；引用类型在栈内存中保存了变量标识符和指向堆内存中该对象的指针，具体值是保存在堆内存（Heap）中的。</p>
