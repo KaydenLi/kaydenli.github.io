@@ -49,16 +49,16 @@
   <meta name="description" content="介绍 BOM 的基础知识。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="BOM">
-<meta property="og:url" content="http://yoursite.com/2020/02/02/BOM/index.html">
+<meta property="og:url" content="http://yoursite.com/2020/02/25/BOM/index.html">
 <meta property="og:site_name" content="KaydenLi">
 <meta property="og:description" content="介绍 BOM 的基础知识。">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2020-02-02T05:49:29.640Z">
-<meta property="article:modified_time" content="2020-02-02T05:49:29.640Z">
+<meta property="article:published_time" content="2020-02-25T08:16:06.742Z">
+<meta property="article:modified_time" content="2020-02-25T08:16:06.742Z">
 <meta property="article:author" content="Kayden Li">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="http://yoursite.com/2020/02/02/BOM/">
+<link rel="canonical" href="http://yoursite.com/2020/02/25/BOM/">
 
 
 <script id="page-configurations">
@@ -180,7 +180,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/02/02/BOM/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/02/25/BOM/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -203,7 +203,7 @@
               </span>
               <span class="post-meta-item-text">发表于</span>
 
-              <time title="创建时间：2020-02-02 13:49:29" itemprop="dateCreated datePublished" datetime="2020-02-02T13:49:29+08:00">2020-02-02</time>
+              <time title="创建时间：2020-02-25 16:16:06" itemprop="dateCreated datePublished" datetime="2020-02-25T16:16:06+08:00">2020-02-25</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -211,8 +211,8 @@
               </span>
               <span class="post-meta-item-text">分类于</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/html/" itemprop="url" rel="index">
-                    <span itemprop="name">html</span>
+                  <a href="/categories/js/" itemprop="url" rel="index">
+                    <span itemprop="name">js</span>
                   </a>
                 </span>
             </span>
@@ -230,14 +230,14 @@
                 <i class="fa fa-file-word-o"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>1.8k</span>
+              <span>1.7k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
                 <i class="fa fa-clock-o"></i>
               </span>
                 <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>6 分钟</span>
+              <span>5 分钟</span>
             </span>
 
         </div>
@@ -250,10 +250,146 @@
 
       
         <h1 id="BOM"><a href="#BOM" class="headerlink" title="BOM"></a>BOM</h1><h2 id="1-BOM的基本概念"><a href="#1-BOM的基本概念" class="headerlink" title="1. BOM的基本概念"></a>1. BOM的基本概念</h2><p>   BOM(Browser Object Mode) 就是指浏览器对象模型，是用于描述这种对象与对象之间层次关系的模型，浏览器对象模型提供了独立于内容的、可以与浏览器窗口进行互动的对象结构。BOM由多个对象组成，其中代表浏览器窗口的 Window 对象是BOM的顶层对象，其他对象都是该对象的子对象。javacsript 是通过访问 BOM对象来访问、控制、修改客户端(浏览器)的，即 BOM 提供了与浏览器交互的方法和接口；与此类似的是 DOM，它提供了处理网页内容的方法和接口。</p>
-<h2 id="2-Window对象"><a href="#2-Window对象" class="headerlink" title="2. Window对象"></a>2. Window对象</h2><p>Window 对象通常可实现如下功能：弹出新的浏览器窗口；移动、关闭浏览器窗口及调整窗口大小；在浏览器窗口中实现页面的前进、后退功能。<br>|属性方法|说明|<br>|:–:|:–:|<br>|history|有关客户访问过的URL的信息。|<br>|location|有关当前URL的信息。|<br>|screen|只读属性，包含有关客户端显示屏的信息。|<br>|prompt()|显示可提示用户输入的对话框。|<br>|alert()|显示一个带有提示信息和一个“确定”按钮的警示对话框。|<br>|confirm()|显示一个带有提示信息、“确定”和“取消”按钮的对话框。|<br>|close()|关闭浏览器窗口。|<br>|open()|打开一个新的浏览器窗口，加载给定URL所指定的文档。|<br>|setTimeout()|在指定的毫秒数后调用函数或计算表达式。|<br>|setInterval()|按照指定的周期（以毫秒计）来调用函数或表达式。|</p>
-<h2 id="3-window对象的子对象"><a href="#3-window对象的子对象" class="headerlink" title="3. window对象的子对象"></a>3. window对象的子对象</h2><h3 id="1-location对象"><a href="#1-location对象" class="headerlink" title="1. location对象"></a>1. location对象</h3><p><code>location</code> 是一个静态对象，该对象是对当前窗口 URL 地址的解析。该对象提供了可以访问 URL 中不同部分的信息属性，通过 <code>location</code> 对象也可以实现页面或锚点跳转等功能。<br>|属性方法|说明|<br>|:–:|:–:|<br>|href|返回或设置当前文档的URL|<br>|search|返回URL中的查询字符串部分。|<br>|hash|返回URL#后面的内容，如果没有#，返回空。|<br>|host|返回URL中的域名部分|<br>|hostname|返回URL中的主域名部分，例如dreamdu.com。|<br>|pathname|返回URL的域名后的部分。|<br>|port|返回URL中的端口部分。|<br>|protocol|返回URL中的协议部分。|<br>|assign|设置当前文档的URL。|<br>|replace()|设置当前文档的URL，并且在history对象的地址列表中移除这个URL location.replace(url);|<br>|reload()| 重载当前页面。|</p>
-<h3 id="2-history对象"><a href="#2-history对象" class="headerlink" title="2. history对象"></a>2. history对象</h3><p>   <code>history</code>对象来保存浏览器历史记录信息，也就是用户访问的页面。浏览器的前进与后退功能本质上就是 <code>history</code> 的操作。<code>history</code> 对象记录了用户浏览过的页面，通过该对象提供的 API 可以实现与浏览器前进/后退类似的导航功能。<br>|属性方法|说明|<br>|:–:|:–:|<br>|go()|前进或后退指定的页面数 history.go(num)。|<br>|back()|后退一页。|<br>|forward()|前进一页。|</p>
-<h3 id="3-Navigator对象"><a href="#3-Navigator对象" class="headerlink" title="3. Navigator对象"></a>3. Navigator对象</h3><p><code>navigator</code> 是指浏览器对象，该对象提供了当前正在使用的浏览器的信息。<code>navigator</code> 对象中的属性是只读的，在 W3C 在 HTML5 标准中，对该对象进行了规范。由于浏览器的同，该对象的具体值可能有所区别。<br>|属性方法|说明|<br>|:–:|:–:|<br>|userAgent|返回用户代理头的字符串表示。|<br>|cookieEnabled|返回浏览器是否支持(启用)cookie。|</p>
+<h2 id="2-Window对象"><a href="#2-Window对象" class="headerlink" title="2. Window对象"></a>2. Window对象</h2><p>Window 对象通常可实现如下功能：弹出新的浏览器窗口；移动、关闭浏览器窗口及调整窗口大小；在浏览器窗口中实现页面的前进、后退功能。</p>
+<table>
+<thead>
+<tr>
+<th align="center">属性方法</th>
+<th align="center">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">history</td>
+<td align="center">有关客户访问过的URL的信息。</td>
+</tr>
+<tr>
+<td align="center">location</td>
+<td align="center">有关当前URL的信息。</td>
+</tr>
+<tr>
+<td align="center">screen</td>
+<td align="center">只读属性，包含有关客户端显示屏的信息。</td>
+</tr>
+<tr>
+<td align="center">prompt()</td>
+<td align="center">显示可提示用户输入的对话框。</td>
+</tr>
+<tr>
+<td align="center">alert()</td>
+<td align="center">显示一个带有提示信息和一个“确定”按钮的警示对话框。</td>
+</tr>
+<tr>
+<td align="center">confirm()</td>
+<td align="center">显示一个带有提示信息、“确定”和“取消”按钮的对话框。</td>
+</tr>
+<tr>
+<td align="center">close()</td>
+<td align="center">关闭浏览器窗口。</td>
+</tr>
+<tr>
+<td align="center">open()</td>
+<td align="center">打开一个新的浏览器窗口，加载给定URL所指定的文档。</td>
+</tr>
+<tr>
+<td align="center">setTimeout()</td>
+<td align="center">在指定的毫秒数后调用函数或计算表达式。</td>
+</tr>
+<tr>
+<td align="center">setInterval()</td>
+<td align="center">按照指定的周期（以毫秒计）来调用函数或表达式。</td>
+</tr>
+</tbody></table>
+<h2 id="3-window对象的子对象"><a href="#3-window对象的子对象" class="headerlink" title="3. window对象的子对象"></a>3. window对象的子对象</h2><h3 id="1-location对象"><a href="#1-location对象" class="headerlink" title="1. location对象"></a>1. location对象</h3><p><code>location</code> 是一个静态对象，该对象是对当前窗口 URL 地址的解析。该对象提供了可以访问 URL 中不同部分的信息属性，通过 <code>location</code> 对象也可以实现页面或锚点跳转等功能。</p>
+<table>
+<thead>
+<tr>
+<th align="center">属性方法</th>
+<th align="center">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">href</td>
+<td align="center">返回或设置当前文档的URL</td>
+</tr>
+<tr>
+<td align="center">search</td>
+<td align="center">返回URL中的查询字符串部分。</td>
+</tr>
+<tr>
+<td align="center">hash</td>
+<td align="center">返回URL#后面的内容，如果没有#，返回空。</td>
+</tr>
+<tr>
+<td align="center">host</td>
+<td align="center">返回URL中的域名部分</td>
+</tr>
+<tr>
+<td align="center">hostname</td>
+<td align="center">返回URL中的主域名部分，例如dreamdu.com。</td>
+</tr>
+<tr>
+<td align="center">pathname</td>
+<td align="center">返回URL的域名后的部分。</td>
+</tr>
+<tr>
+<td align="center">port</td>
+<td align="center">返回URL中的端口部分。</td>
+</tr>
+<tr>
+<td align="center">protocol</td>
+<td align="center">返回URL中的协议部分。</td>
+</tr>
+<tr>
+<td align="center">assign</td>
+<td align="center">设置当前文档的URL。</td>
+</tr>
+<tr>
+<td align="center">replace()</td>
+<td align="center">设置当前文档的URL，并且在history对象的地址列表中移除这个URL location.replace(url);</td>
+</tr>
+<tr>
+<td align="center">reload()</td>
+<td align="center">重载当前页面。</td>
+</tr>
+</tbody></table>
+<h3 id="2-history对象"><a href="#2-history对象" class="headerlink" title="2. history对象"></a>2. history对象</h3><p>   <code>history</code>对象来保存浏览器历史记录信息，也就是用户访问的页面。浏览器的前进与后退功能本质上就是 <code>history</code> 的操作。<code>history</code> 对象记录了用户浏览过的页面，通过该对象提供的 API 可以实现与浏览器前进/后退类似的导航功能。</p>
+<table>
+<thead>
+<tr>
+<th align="center">属性方法</th>
+<th align="center">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">go()</td>
+<td align="center">前进或后退指定的页面数 history.go(num)。</td>
+</tr>
+<tr>
+<td align="center">back()</td>
+<td align="center">后退一页。</td>
+</tr>
+<tr>
+<td align="center">forward()</td>
+<td align="center">前进一页。</td>
+</tr>
+</tbody></table>
+<h3 id="3-Navigator对象"><a href="#3-Navigator对象" class="headerlink" title="3. Navigator对象"></a>3. Navigator对象</h3><p><code>navigator</code> 是指浏览器对象，该对象提供了当前正在使用的浏览器的信息。<code>navigator</code> 对象中的属性是只读的，在 W3C 在 HTML5 标准中，对该对象进行了规范。由于浏览器的同，该对象的具体值可能有所区别。</p>
+<table>
+<thead>
+<tr>
+<th align="center">属性方法</th>
+<th align="center">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">userAgent</td>
+<td align="center">返回用户代理头的字符串表示。</td>
+</tr>
+<tr>
+<td align="center">cookieEnabled</td>
+<td align="center">返回浏览器是否支持(启用)cookie。</td>
+</tr>
+</tbody></table>
 <h3 id="4-screen对象"><a href="#4-screen对象" class="headerlink" title="4. screen对象"></a>4. screen对象</h3><p><code>screen</code> 对象中包含了用户显示器屏幕相关信息。通过该对象，可以访问用户显示器屏幕宽、高、色深等信息。</p>
 <h3 id="5-DOM（document）相关对象"><a href="#5-DOM（document）相关对象" class="headerlink" title="5. DOM（document）相关对象"></a>5. DOM（document）相关对象</h3><p>DOM 可以认为是 BOM 的一个子集，DOM 中文档操作相关对象，如：<code>Node</code>、<code>Document</code>、<code>Element</code>等 DOM 节点类型对象，都是做为 <code>window</code> 对象的子属性出现的。<code>document</code> 是 <code>window</code> 对象的一个属性，它是一个 <code>document</code> 对象实例，表示当前窗口中文档对象。通过该对象，可以对文档和文档中元素、节点等进行操作。</p>
 <h3 id="6-frames-对象"><a href="#6-frames-对象" class="headerlink" title="6. frames 对象"></a>6. frames 对象</h3><p><code>frames</code> 对象是一个集合，表示当前页面中使用的子框架。如果页面中使用了框架，将产生一个框架集合 <code>frames</code>，在集合中可以用数字下标（从 0 开始）或名字索引框架。集全中的每一个对象，包含了框架的页面布局信息，以及每一个框架所对应的 <code>window</code> 对象。</p>
@@ -288,13 +424,10 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2020/02/01/WebSocket%E7%AE%80%E4%BB%8B/" rel="prev" title="websocket介绍">
-      <i class="fa fa-chevron-left"></i> websocket介绍
+    <a href="/2020/02/25/js%E4%B9%8B%E6%97%A5%E6%9C%9F%E3%80%81math%E3%80%81%E5%AF%B9%E8%B1%A1%E3%80%81%E6%95%B0%E7%BB%84/" rel="prev" title="js之日期、Math、对象、数组">
+      <i class="fa fa-chevron-left"></i> js之日期、Math、对象、数组
     </a></div>
-      <div class="post-nav-item">
-    <a href="/2020/02/03/css%E5%9E%82%E7%9B%B4%E5%B1%85%E4%B8%AD%E7%9A%84%E6%96%B9%E6%B3%95/" rel="next" title="垂直居中的方法">
-      垂直居中的方法 <i class="fa fa-chevron-right"></i>
-    </a></div>
+      <div class="post-nav-item"></div>
     </div>
       </footer>
     
