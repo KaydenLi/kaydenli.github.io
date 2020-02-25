@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+
+
+<script id="hexo-configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    hostname: new URL('http://yoursite.com').hostname,
+    root: '/',
+    scheme: 'Mist',
+    version: '7.7.0',
+    exturl: false,
+    sidebar: {"position":"left","width":300,"display":"remove","padding":10,"offset":12,"onmobile":false},
+    copycode: {"enable":true,"show_result":true,"style":null},
+    back2top: {"enable":true,"sidebar":false,"scrollpercent":false},
+    bookmark: {"enable":false,"color":"#222","save":"auto"},
+    fancybox: false,
+    mediumzoom: false,
+    lazyload: false,
+    pangu: false,
+    comments: {"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},
+    algolia: {
+      appID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    localsearch: {"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    path: 'search.xml',
+    motion: {"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}
+  };
+</script>
+
+  <meta name="description" content="介绍js跨域的知识。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="跨域">
+<meta property="og:url" content="http://yoursite.com/2020/02/25/ajax/index.html">
+<meta property="og:site_name" content="KaydenLi">
+<meta property="og:description" content="介绍js跨域的知识。">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2020-02-25T14:20:56.158Z">
+<meta property="article:modified_time" content="2020-02-25T14:20:25.346Z">
+<meta property="article:author" content="Kayden Li">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="http://yoursite.com/2020/02/25/ajax/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: false,
+    isPost: true
+  };
+</script>
+
+  <title>跨域 | KaydenLi</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-meta">
+
+    <div>
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">KaydenLi</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+        <p class="site-subtitle">我的博客</p>
+  </div>
+
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-fw fa-user"></i>关于</a>
+
+  </li>
+  </ul>
+
+</nav>
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content">
+            
+
+  <div class="posts-expand">
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/02/25/ajax/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Kayden Li">
+      <meta itemprop="description" content="基于github的hexo博客">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="KaydenLi">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          跨域
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2020-02-25 22:20:56 / 修改时间：22:20:25" itemprop="dateCreated datePublished" datetime="2020-02-25T22:20:56+08:00">2020-02-25</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/js/" itemprop="url" rel="index">
+                    <span itemprop="name">js</span>
+                  </a>
+                </span>
+            </span>
+
+          
+            <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv" style="display: none;">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span id="busuanzi_value_page_pv"></span>
+            </span><br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>2.4k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>8 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h1 id="Ajax"><a href="#Ajax" class="headerlink" title="Ajax"></a>Ajax</h1><h2 id="1-ajax"><a href="#1-ajax" class="headerlink" title="1. ajax"></a>1. ajax</h2><p>   <code>AJAX</code> =<code>Asynchronous JavaScript and XML</code>（异步的 <code>JavaScript</code> 和<code>XML</code>）。<code>AJAX</code> 不是新的编程语言，而是一种<strong>使用现有标准的新方法</strong>。<code>AJAX</code> 最大的优点是在不重新加载整个页面的情况下，可以与服务器交换数据并更新部分网页内容。<code>AJAX</code> 不需要任何浏览器插件，但需要用户允许<code>JavaScript</code>在浏览器上执行。<br>   常见的<code>ajax</code>框架有<code>Fetch API</code>、<code>Axios</code>、<code>jQuery</code>、<code>SuperAgent</code>、<code>Request</code>等。其中，<code>Axios</code>是一个基于<code>XMLHttpRequest</code>而构建的现代<code>JavaScript</code>库，用于进行<code>AJAX</code>调用。它允许你从浏览器和服务器发出<code>HTTP</code>请求。此外，它还支持<code>ES6</code>原生的<code>Promise API</code>。<code>Axios</code>的其他突出特点包括：拦截请求和响应、使用<code>promise</code>转换请求和响应数据、自动转换<code>JSON</code>数据、取消实时请求。</p>
+<h2 id="2-XMLHttpRequest"><a href="#2-XMLHttpRequest" class="headerlink" title="2. XMLHttpRequest"></a>2. XMLHttpRequest</h2><p>在实际开发中我们使用的各种网络请求框架是封装了的<code>XMLHttpRequest</code>对象。<br>一个简单封装<code>XMLHttpRequest</code>的例子如下：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">&lt;script type=<span class="string">"text/javascript"</span>&gt;</span><br><span class="line"><span class="comment">//1.创建对象</span></span><br><span class="line"><span class="keyword">var</span> xhr = <span class="keyword">new</span> XMLHttpRequest();</span><br><span class="line">xhr.timeout = <span class="number">3000</span>;</span><br><span class="line">xhr.ontimeout = <span class="function"><span class="keyword">function</span> (<span class="params">event</span>) </span>&#123;</span><br><span class="line">   alert(<span class="string">"请求超时！"</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> formData = &#123;&#125;；</span><br><span class="line"><span class="comment">//2.连接服务器 </span></span><br><span class="line">xhr.open(<span class="string">'POST'</span>, <span class="string">'http://www.test.com:8000/login'</span>);</span><br><span class="line"><span class="comment">//3.发送请求</span></span><br><span class="line">xhr.send(formData);</span><br><span class="line"><span class="comment">//4.接收返回</span></span><br><span class="line">xhr.onreadystatechange = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">   <span class="keyword">if</span> (xhr.readyState == <span class="number">4</span> &amp;&amp; xhr.status == <span class="number">200</span>) &#123;</span><br><span class="line">      alert(xhr.responseText);</span><br><span class="line">   &#125;</span><br><span class="line">   <span class="keyword">else</span> &#123;</span><br><span class="line">      alert(xhr.statusText);</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br><span class="line">&lt;<span class="regexp">/script&gt;</span></span><br></pre></td></tr></table></figure>
+<p>属性说明</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">* xhr.readyState：XMLHttpRequest对象的状态，等于<span class="number">4</span>表示数据已经接收完毕。</span><br><span class="line">* xhr.status：服务器返回的状态码，等于<span class="number">200</span>表示一切正常。</span><br><span class="line">* xhr.responseText：服务器返回的文本数据</span><br><span class="line">* xhr.responseXML：服务器返回的XML格式的数据</span><br><span class="line">* xhr.statusText：服务器返回的状态文本。</span><br></pre></td></tr></table></figure>
+
+<p><code>XMLHttpRequest</code>可以向不同域名的服务器发出<code>HTTP</code>请求，叫做CORS，可以进行CORS有两个条件:<br>1)浏览器要支持CORS<br>2)服务器允许跨域：响应头需要添加一下选项</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">self.set_header(<span class="string">'Access-Control-Allow-Origin'</span>, <span class="string">'*'</span>)</span><br><span class="line">self.set_header(<span class="string">'Access-Control-Allow-Methods'</span>, <span class="string">'POST, GET, OPTIONS'</span>)</span><br><span class="line">self.set_header(<span class="string">'Access-Control-Max-Age'</span>, <span class="number">1000</span>)</span><br><span class="line">self.set_header(<span class="string">'Access-Control-Allow-Headers'</span>, <span class="string">'*'</span>)</span><br><span class="line">self.set_header(<span class="string">'Content-type'</span>, <span class="string">'application/json'</span>)</span><br></pre></td></tr></table></figure>
+
+<p>下面介绍跨域的相关知识。</p>
+<h2 id="3-跨域"><a href="#3-跨域" class="headerlink" title="3. 跨域"></a>3. 跨域</h2><h3 id="0-同源策略"><a href="#0-同源策略" class="headerlink" title="0. 同源策略"></a>0. 同源策略</h3><p>   同源策略，它是由<code>Netscape</code>提出的一个著名的安全策略。所有支持<code>JavaScript</code> 的浏览器都会使用这个策略。所谓同源是指，域名，协议，端口相同。同源策略是浏览器的行为。<br>   浏览器遵守同源策略，但是有若干个标签是允许跨域的，比如：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"xxx"</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">link</span> <span class="attr">href</span>=<span class="string">"xxx"</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"xxx"</span>/&gt;</span></span><br></pre></td></tr></table></figure>
+<p>常见解决跨域问题的方式有<code>JSONP</code>、<code>CORS</code>等</p>
+<h3 id="1-JSONP"><a href="#1-JSONP" class="headerlink" title="1. JSONP"></a>1. JSONP</h3><p>   <code>jsonp</code> 的原理很简单，就是利用了<code>&lt;script&gt;</code>标签没有跨域限制的漏洞。当需要通讯时，通过<code>&lt;script&gt;</code>标签指向一个需要访问的地址并提供一个回调函数来接收数据。<code>JSONP</code> 使用简单且兼容性不错，但是只限于 <code>get</code> 请求。</p>
+<h3 id="2-CORS"><a href="#2-CORS" class="headerlink" title="2. CORS"></a>2. CORS</h3><p>   CORS是一个W3C标准，全称是”跨域资源共享”（Cross-origin resource sharing）。<code>CORS</code> 需要浏览器和后端同时支持。<code>IE8、9</code>需要通过<code>XDomainRequest</code> 来实现。浏览器会自动进行<code>CORS</code>通信，实现<code>CORS</code>通信的关键是后端。只要后端实现了<code>CORS</code>，就实现了跨域。<br>   对于开发者来说，浏览器一旦发现 <code>ajax</code> 请求跨域，就会自动添加一些附加的头信息，有时还会多出一次附加的请求，但用户不会有感觉。<br>   服务端设置<code>Access-Control-Allow-Origin</code> 就可以开启 <code>CORS</code>。该属性表示哪些域名可以访问资源，如果设置通配符则表示所有网站都可以访问资源。虽然设置<code>CORS</code>和前端没什么关系，但是通过这种方式解决跨域问题的话，会在发送请求时出现两种情况，分别为简单请求和复杂请求。<br>   值得注意的是，通常使用CORS时，异步请求会被分为简单请求和非简单请求，非简单请求的区别是会先发一次预检请求。<br>   使用简单方便，更为安全；支持 POST 请求方式。但<code>CORS</code> 是一种新型的跨域问题的解决方案，存在兼容问题，仅支持 <code>IE 10</code> 以上。<br>详细介绍可查看<a href="http://www.ruanyifeng.com/blog/2016/04/cors.html" target="_blank" rel="noopener">跨域资源共享 CORS 详解</a>。</p>
+<h3 id="3-Server-Proxy"><a href="#3-Server-Proxy" class="headerlink" title="3. Server Proxy"></a>3. Server Proxy</h3><p>   服务器代理，顾名思义，当你需要有跨域的请求操作时发送请求给后端，让后端代为请求，然后最后将获取的结果发送回来。</p>
+    </div>
+
+    
+    
+    
+      
+
+        <div class="reward-container">
+  <div></div>
+  <button disable="enable" onclick="var qr = document.getElementById(&quot;qr&quot;); qr.style.display = (qr.style.display === 'none') ? 'block' : 'none';">
+    打赏
+  </button>
+  <div id="qr" style="display: none;">
+      
+      <div style="display: inline-block;">
+        <img src="/images/wechatpay.png" alt="Kayden Li 微信支付">
+        <p>微信支付</p>
+      </div>
+
+  </div>
+</div>
+
+
+      <footer class="post-footer">
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2020/02/25/js%E4%BA%8B%E4%BB%B6/" rel="prev" title="js事件">
+      <i class="fa fa-chevron-left"></i> js事件
+    </a></div>
+      <div class="post-nav-item"></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+  </div>
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let activeClass = CONFIG.comments.activeClass;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        <div class="copyright" style="display:inline-block">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Kayden Li</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+      <span class="post-meta-item-text">站点总字数：</span>
+    <span title="站点总字数">45k</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+      <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
+    <span title="站点阅读时长">2:22</span>
+    <span>&nbsp;&nbsp;|&nbsp;&nbsp;</span>
+</div>
+
+
+        
+<div class="busuanzi-count" style="display:inline-block">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        访客数&nbsp;&nbsp;<span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        访问量&nbsp;&nbsp;<span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>
