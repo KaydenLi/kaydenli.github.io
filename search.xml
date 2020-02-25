@@ -1,6 +1,200 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>DOM</title>
+    <url>/2020/02/25/DOM/</url>
+    <content><![CDATA[<h1 id="DOM"><a href="#DOM" class="headerlink" title="DOM"></a>DOM</h1><p>   文章大部分引用自：<a href="https://www.haorooms.com/post/js_dom_api" target="_blank" rel="noopener">总结js常用的dom操作（js的dom操作API）</a></p>
+<h2 id="1-DOM的本质"><a href="#1-DOM的本质" class="headerlink" title="1. DOM的本质"></a>1. DOM的本质</h2><p>   <code>DOM</code>（文档对象模型）是针对 <code>HTML</code> 和 <code>XML</code> 文档的一个<code>API</code>（应用程序编程接口）。<code>DOM</code> 描绘了一个层次化的节点树，允许开发人员添加、移除和修改页面的某一部分。<code>DOM</code> 脱胎于 <code>Netscape</code> 及微软公司创始的 <code>DHTML</code>（<code>动态 HTML</code>），但现在它已经成为表现和操作页面标记的真正的跨平台、语言中立的方式。1998 年 10 月 <code>DOM 1</code> 级规范成为 <code>W3C</code> 的推荐标准，为基本的文档结构及查询提供了接口。</p>
+<h2 id="2-获取结点API"><a href="#2-获取结点API" class="headerlink" title="2. 获取结点API"></a>2. 获取结点API</h2><table>
+<thead>
+<tr>
+<th align="center">方法</th>
+<th align="center">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">document.getElementById()</td>
+<td align="center">根据ID查找元素，大小写敏感，如果有多个结果，只返回第一个</td>
+</tr>
+<tr>
+<td align="center">document.getElementsByClassName()</td>
+<td align="center">根据类名查找元素，多个类名用空格分隔，返回一个 HTMLCollection 。IE9+（含）。其它元素也支持 getElementsByClassName 方法</td>
+</tr>
+<tr>
+<td align="center">document.getElementsByTagName()</td>
+<td align="center">根据标签查找元素， * 表示查询所有标签，返回一个 HTMLCollection</td>
+</tr>
+<tr>
+<td align="center">document.getElementsByName()</td>
+<td align="center">根据元素的name属性查找，返回一个 NodeList</td>
+</tr>
+<tr>
+<td align="center">document.querySelector()</td>
+<td align="center">返回单个Node，IE8+(含），如果匹配到多个结果，只返回第一个</td>
+</tr>
+<tr>
+<td align="center">document.querySelectorAll()</td>
+<td align="center">返回一个 NodeList ，IE8+(含）</td>
+</tr>
+<tr>
+<td align="center">document.forms()</td>
+<td align="center">获取当前页面所有form，返回一个 HTMLCollection</td>
+</tr>
+</tbody></table>
+<h2 id="3-节点创建API"><a href="#3-节点创建API" class="headerlink" title="3. 节点创建API"></a>3. 节点创建API</h2><table>
+<thead>
+<tr>
+<th align="center">方法</th>
+<th align="center">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">createElement()</td>
+<td align="center">创建元素。通过 <code>createElement</code> 创建的元素并不属于 <code>document</code>对象，它只是创建出来，并未添加到<code>html</code>文档中，要调用 <code>appendChild</code> 或 <code>insertBefore</code> 等方法将其添加到<code>HTML</code>文档中</td>
+</tr>
+<tr>
+<td align="center">createTextNode()</td>
+<td align="center">创建文本节点</td>
+</tr>
+<tr>
+<td align="center">cloneNode()</td>
+<td align="center">克隆一个节点。它接收一个<code>bool</code>参数，用来表示是否复制子元素。克隆节点并不会克隆用 <code>addEventListener</code> 和 <code>node.onclick=xxx</code> 方式绑定的事件</td>
+</tr>
+<tr>
+<td align="center">createDocumentFragment()</td>
+<td align="center">用来创建一个 DocumentFragment ，也就是文档碎片，它表示一种轻量级的文档，主要是用来存储临时节点，大量操作DOM时用它可以大大提升性能</td>
+</tr>
+</tbody></table>
+<h2 id="4-节点修改API"><a href="#4-节点修改API" class="headerlink" title="4. 节点修改API"></a>4. 节点修改API</h2><table>
+<thead>
+<tr>
+<th align="center">方法</th>
+<th align="center">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">appendChild()</td>
+<td align="center">parent.appendChild(child);</td>
+</tr>
+<tr>
+<td align="center">insertBefore()</td>
+<td align="center">parentNode.insertBefore(newNode, refNode);</td>
+</tr>
+<tr>
+<td align="center">replaceChild</td>
+<td align="center">parent.replaceChild(newChild, oldChild);</td>
+</tr>
+<tr>
+<td align="center">removeChild</td>
+<td align="center">var deletedChild = parent.removeChild(node);</td>
+</tr>
+</tbody></table>
+<h2 id="5-节点关系API"><a href="#5-节点关系API" class="headerlink" title="5. 节点关系API"></a>5. 节点关系API</h2><ol>
+<li>父关系API</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th align="center">属性</th>
+<th align="center">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">parentNode</td>
+<td align="center">每个节点都有一个parentNode属性，它表示元素的父节点。Element的父节点可能是Element，Document或DocumentFragment</td>
+</tr>
+<tr>
+<td align="center">parentElement</td>
+<td align="center">返回元素的父元素节点，与parentNode的区别在于，其父节点必须是一个Element元素，如果不是，则返回null</td>
+</tr>
+</tbody></table>
+<p>2、子关系API</p>
+<table>
+<thead>
+<tr>
+<th align="center">属性</th>
+<th align="center">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">children</td>
+<td align="center">返回一个实时的 HTMLCollection ，子节点都是Element，IE9以下浏览器不支持</td>
+</tr>
+<tr>
+<td align="center">childNodes</td>
+<td align="center">返回一个实时的 NodeList ，表示元素的子节点列表，注意子节点可能包含文本节点、注释节点等</td>
+</tr>
+<tr>
+<td align="center">firstChild</td>
+<td align="center">返回第一个子节点，不存在返回null，与之相对应的还有一个 firstElementChild</td>
+</tr>
+<tr>
+<td align="center">lastChild</td>
+<td align="center">返回最后一个子节点，不存在返回null，与之相对应的还有一个 lastElementChild</td>
+</tr>
+</tbody></table>
+<p>3、兄弟关系型API</p>
+<table>
+<thead>
+<tr>
+<th align="center">属性</th>
+<th align="center">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">previousSibling</td>
+<td align="center">节点的前一个节点，如果不存在则返回null。注意有可能拿到的节点是文本节点或注释节点，与预期的不符，要进行处理一下</td>
+</tr>
+<tr>
+<td align="center">nextSibling</td>
+<td align="center">节点的后一个节点，如果不存在则返回null。注意有可能拿到的节点是文本节点，与预期的不符，要进行处理一下</td>
+</tr>
+<tr>
+<td align="center">previousElementSibling</td>
+<td align="center">返回前一个元素节点，前一个节点必须是Element，注意IE9以下浏览器不支持</td>
+</tr>
+<tr>
+<td align="center">nextElementSibling</td>
+<td align="center">返回后一个元素节点，后一个节点必须是Element，注意IE9以下浏览器不支持</td>
+</tr>
+</tbody></table>
+<h2 id="6-元素属性型API"><a href="#6-元素属性型API" class="headerlink" title="6. 元素属性型API"></a>6. 元素属性型API</h2><table>
+<thead>
+<tr>
+<th align="center">方法</th>
+<th align="center">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">setAttribute()</td>
+<td align="center">element.setAttribute(name, value);</td>
+</tr>
+<tr>
+<td align="center">getAttribute()</td>
+<td align="center">var value = element.getAttribute(“id”);</td>
+</tr>
+<tr>
+<td align="center">hasAttribute()</td>
+<td align="center">var result = element.hasAttribute(name);</td>
+</tr>
+<tr>
+<td align="center">dataset()</td>
+<td align="center">获取html data-开头的属性</td>
+</tr>
+</tbody></table>
+<h2 id="7-样式相关API"><a href="#7-样式相关API" class="headerlink" title="7. 样式相关API"></a>7. 样式相关API</h2><p>1、直接修改元素的样式</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">elem.style.color = <span class="string">'red'</span>;  </span><br><span class="line">elem.style.setProperty(<span class="string">'font-size'</span>, <span class="string">'16px'</span>);  </span><br><span class="line">elem.style.removeProperty(<span class="string">'color'</span>);</span><br></pre></td></tr></table></figure>
+<p>2、动态添加样式规则</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> style = <span class="built_in">document</span>.createElement(<span class="string">'style'</span>);  </span><br><span class="line">style.innerHTML = <span class="string">'body&#123;color:red&#125; #top:hover&#123;background-color: red;color: white;&#125;'</span>;  </span><br><span class="line"><span class="built_in">document</span>.head.appendChild(style);</span><br></pre></td></tr></table></figure>
+<p>3、classList获取样式class</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// div is an object reference to a &lt;div&gt; element with class="foo bar"</span></span><br><span class="line">div.classList.remove(<span class="string">"foo"</span>);</span><br><span class="line">div.classList.add(<span class="string">"anotherclass"</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// if visible is set remove it, otherwise add it</span></span><br><span class="line">div.classList.toggle(<span class="string">"visible"</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// add/remove visible, depending on test conditional, i less than 10</span></span><br><span class="line">div.classList.toggle(<span class="string">"visible"</span>, i &lt; <span class="number">10</span> );</span><br><span class="line"></span><br><span class="line">alert(div.classList.contains(<span class="string">"foo"</span>));</span><br><span class="line"></span><br><span class="line"><span class="comment">// add or remove multiple classes</span></span><br><span class="line">div.classList.add(<span class="string">"foo"</span>, <span class="string">"bar"</span>, <span class="string">"baz"</span>);</span><br><span class="line">div.classList.remove(<span class="string">"foo"</span>, <span class="string">"bar"</span>, <span class="string">"baz"</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// add or remove multiple classes using spread syntax</span></span><br><span class="line"><span class="keyword">let</span> cls = [<span class="string">"foo"</span>, <span class="string">"bar"</span>];</span><br><span class="line">div.classList.add(...cls); </span><br><span class="line">div.classList.remove(...cls);</span><br><span class="line"></span><br><span class="line"><span class="comment">// replace class "foo" with class "bar"</span></span><br><span class="line">div.classList.replace(<span class="string">"foo"</span>, <span class="string">"bar"</span>);</span><br></pre></td></tr></table></figure>
+<p>4、window.getComputedStyle<br>   通过 <code>element.sytle.xxx</code> 只能获取到内联样式，借助 <code>window.getComputedStyle</code> 可以获取应用到元素上的所有样式，<code>IE8</code>或更低版本不支持此方法。</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> style = <span class="built_in">window</span>.getComputedStyle(element[, pseudoElt]);</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>js</category>
+      </categories>
+  </entry>
+  <entry>
     <title>BOM</title>
     <url>/2020/02/25/BOM/</url>
     <content><![CDATA[<h1 id="BOM"><a href="#BOM" class="headerlink" title="BOM"></a>BOM</h1><h2 id="1-BOM的基本概念"><a href="#1-BOM的基本概念" class="headerlink" title="1. BOM的基本概念"></a>1. BOM的基本概念</h2><p>   BOM(Browser Object Mode) 就是指浏览器对象模型，是用于描述这种对象与对象之间层次关系的模型，浏览器对象模型提供了独立于内容的、可以与浏览器窗口进行互动的对象结构。BOM由多个对象组成，其中代表浏览器窗口的 Window 对象是BOM的顶层对象，其他对象都是该对象的子对象。javacsript 是通过访问 BOM对象来访问、控制、修改客户端(浏览器)的，即 BOM 提供了与浏览器交互的方法和接口；与此类似的是 DOM，它提供了处理网页内容的方法和接口。</p>

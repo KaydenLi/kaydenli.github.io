@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+
+
+<script id="hexo-configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    hostname: new URL('http://yoursite.com').hostname,
+    root: '/',
+    scheme: 'Mist',
+    version: '7.7.0',
+    exturl: false,
+    sidebar: {"position":"left","width":300,"display":"remove","padding":10,"offset":12,"onmobile":false},
+    copycode: {"enable":true,"show_result":true,"style":null},
+    back2top: {"enable":true,"sidebar":false,"scrollpercent":false},
+    bookmark: {"enable":false,"color":"#222","save":"auto"},
+    fancybox: false,
+    mediumzoom: false,
+    lazyload: false,
+    pangu: false,
+    comments: {"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},
+    algolia: {
+      appID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    localsearch: {"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    path: 'search.xml',
+    motion: {"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}
+  };
+</script>
+
+  <meta name="description" content="介绍 DOM 的基础知识。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="DOM">
+<meta property="og:url" content="http://yoursite.com/2020/02/25/DOM/index.html">
+<meta property="og:site_name" content="KaydenLi">
+<meta property="og:description" content="介绍 DOM 的基础知识。">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2020-02-25T09:06:04.828Z">
+<meta property="article:modified_time" content="2020-02-25T09:05:52.280Z">
+<meta property="article:author" content="Kayden Li">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="http://yoursite.com/2020/02/25/DOM/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: false,
+    isPost: true
+  };
+</script>
+
+  <title>DOM | KaydenLi</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-meta">
+
+    <div>
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">KaydenLi</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+        <p class="site-subtitle">我的博客</p>
+  </div>
+
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-fw fa-user"></i>关于</a>
+
+  </li>
+  </ul>
+
+</nav>
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content">
+            
+
+  <div class="posts-expand">
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/02/25/DOM/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Kayden Li">
+      <meta itemprop="description" content="基于github的hexo博客">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="KaydenLi">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          DOM
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2020-02-25 17:06:04 / 修改时间：17:05:52" itemprop="dateCreated datePublished" datetime="2020-02-25T17:06:04+08:00">2020-02-25</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/js/" itemprop="url" rel="index">
+                    <span itemprop="name">js</span>
+                  </a>
+                </span>
+            </span>
+
+          
+            <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv" style="display: none;">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span id="busuanzi_value_page_pv"></span>
+            </span><br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>3.3k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>10 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h1 id="DOM"><a href="#DOM" class="headerlink" title="DOM"></a>DOM</h1><p>   文章大部分引用自：<a href="https://www.haorooms.com/post/js_dom_api" target="_blank" rel="noopener">总结js常用的dom操作（js的dom操作API）</a></p>
+<h2 id="1-DOM的本质"><a href="#1-DOM的本质" class="headerlink" title="1. DOM的本质"></a>1. DOM的本质</h2><p>   <code>DOM</code>（文档对象模型）是针对 <code>HTML</code> 和 <code>XML</code> 文档的一个<code>API</code>（应用程序编程接口）。<code>DOM</code> 描绘了一个层次化的节点树，允许开发人员添加、移除和修改页面的某一部分。<code>DOM</code> 脱胎于 <code>Netscape</code> 及微软公司创始的 <code>DHTML</code>（<code>动态 HTML</code>），但现在它已经成为表现和操作页面标记的真正的跨平台、语言中立的方式。1998 年 10 月 <code>DOM 1</code> 级规范成为 <code>W3C</code> 的推荐标准，为基本的文档结构及查询提供了接口。</p>
+<h2 id="2-获取结点API"><a href="#2-获取结点API" class="headerlink" title="2. 获取结点API"></a>2. 获取结点API</h2><table>
+<thead>
+<tr>
+<th align="center">方法</th>
+<th align="center">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">document.getElementById()</td>
+<td align="center">根据ID查找元素，大小写敏感，如果有多个结果，只返回第一个</td>
+</tr>
+<tr>
+<td align="center">document.getElementsByClassName()</td>
+<td align="center">根据类名查找元素，多个类名用空格分隔，返回一个 HTMLCollection 。IE9+（含）。其它元素也支持 getElementsByClassName 方法</td>
+</tr>
+<tr>
+<td align="center">document.getElementsByTagName()</td>
+<td align="center">根据标签查找元素， * 表示查询所有标签，返回一个 HTMLCollection</td>
+</tr>
+<tr>
+<td align="center">document.getElementsByName()</td>
+<td align="center">根据元素的name属性查找，返回一个 NodeList</td>
+</tr>
+<tr>
+<td align="center">document.querySelector()</td>
+<td align="center">返回单个Node，IE8+(含），如果匹配到多个结果，只返回第一个</td>
+</tr>
+<tr>
+<td align="center">document.querySelectorAll()</td>
+<td align="center">返回一个 NodeList ，IE8+(含）</td>
+</tr>
+<tr>
+<td align="center">document.forms()</td>
+<td align="center">获取当前页面所有form，返回一个 HTMLCollection</td>
+</tr>
+</tbody></table>
+<h2 id="3-节点创建API"><a href="#3-节点创建API" class="headerlink" title="3. 节点创建API"></a>3. 节点创建API</h2><table>
+<thead>
+<tr>
+<th align="center">方法</th>
+<th align="center">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">createElement()</td>
+<td align="center">创建元素。通过 <code>createElement</code> 创建的元素并不属于 <code>document</code>对象，它只是创建出来，并未添加到<code>html</code>文档中，要调用 <code>appendChild</code> 或 <code>insertBefore</code> 等方法将其添加到<code>HTML</code>文档中</td>
+</tr>
+<tr>
+<td align="center">createTextNode()</td>
+<td align="center">创建文本节点</td>
+</tr>
+<tr>
+<td align="center">cloneNode()</td>
+<td align="center">克隆一个节点。它接收一个<code>bool</code>参数，用来表示是否复制子元素。克隆节点并不会克隆用 <code>addEventListener</code> 和 <code>node.onclick=xxx</code> 方式绑定的事件</td>
+</tr>
+<tr>
+<td align="center">createDocumentFragment()</td>
+<td align="center">用来创建一个 DocumentFragment ，也就是文档碎片，它表示一种轻量级的文档，主要是用来存储临时节点，大量操作DOM时用它可以大大提升性能</td>
+</tr>
+</tbody></table>
+<h2 id="4-节点修改API"><a href="#4-节点修改API" class="headerlink" title="4. 节点修改API"></a>4. 节点修改API</h2><table>
+<thead>
+<tr>
+<th align="center">方法</th>
+<th align="center">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">appendChild()</td>
+<td align="center">parent.appendChild(child);</td>
+</tr>
+<tr>
+<td align="center">insertBefore()</td>
+<td align="center">parentNode.insertBefore(newNode, refNode);</td>
+</tr>
+<tr>
+<td align="center">replaceChild</td>
+<td align="center">parent.replaceChild(newChild, oldChild);</td>
+</tr>
+<tr>
+<td align="center">removeChild</td>
+<td align="center">var deletedChild = parent.removeChild(node);</td>
+</tr>
+</tbody></table>
+<h2 id="5-节点关系API"><a href="#5-节点关系API" class="headerlink" title="5. 节点关系API"></a>5. 节点关系API</h2><ol>
+<li>父关系API</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th align="center">属性</th>
+<th align="center">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">parentNode</td>
+<td align="center">每个节点都有一个parentNode属性，它表示元素的父节点。Element的父节点可能是Element，Document或DocumentFragment</td>
+</tr>
+<tr>
+<td align="center">parentElement</td>
+<td align="center">返回元素的父元素节点，与parentNode的区别在于，其父节点必须是一个Element元素，如果不是，则返回null</td>
+</tr>
+</tbody></table>
+<p>2、子关系API</p>
+<table>
+<thead>
+<tr>
+<th align="center">属性</th>
+<th align="center">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">children</td>
+<td align="center">返回一个实时的 HTMLCollection ，子节点都是Element，IE9以下浏览器不支持</td>
+</tr>
+<tr>
+<td align="center">childNodes</td>
+<td align="center">返回一个实时的 NodeList ，表示元素的子节点列表，注意子节点可能包含文本节点、注释节点等</td>
+</tr>
+<tr>
+<td align="center">firstChild</td>
+<td align="center">返回第一个子节点，不存在返回null，与之相对应的还有一个 firstElementChild</td>
+</tr>
+<tr>
+<td align="center">lastChild</td>
+<td align="center">返回最后一个子节点，不存在返回null，与之相对应的还有一个 lastElementChild</td>
+</tr>
+</tbody></table>
+<p>3、兄弟关系型API</p>
+<table>
+<thead>
+<tr>
+<th align="center">属性</th>
+<th align="center">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">previousSibling</td>
+<td align="center">节点的前一个节点，如果不存在则返回null。注意有可能拿到的节点是文本节点或注释节点，与预期的不符，要进行处理一下</td>
+</tr>
+<tr>
+<td align="center">nextSibling</td>
+<td align="center">节点的后一个节点，如果不存在则返回null。注意有可能拿到的节点是文本节点，与预期的不符，要进行处理一下</td>
+</tr>
+<tr>
+<td align="center">previousElementSibling</td>
+<td align="center">返回前一个元素节点，前一个节点必须是Element，注意IE9以下浏览器不支持</td>
+</tr>
+<tr>
+<td align="center">nextElementSibling</td>
+<td align="center">返回后一个元素节点，后一个节点必须是Element，注意IE9以下浏览器不支持</td>
+</tr>
+</tbody></table>
+<h2 id="6-元素属性型API"><a href="#6-元素属性型API" class="headerlink" title="6. 元素属性型API"></a>6. 元素属性型API</h2><table>
+<thead>
+<tr>
+<th align="center">方法</th>
+<th align="center">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">setAttribute()</td>
+<td align="center">element.setAttribute(name, value);</td>
+</tr>
+<tr>
+<td align="center">getAttribute()</td>
+<td align="center">var value = element.getAttribute(“id”);</td>
+</tr>
+<tr>
+<td align="center">hasAttribute()</td>
+<td align="center">var result = element.hasAttribute(name);</td>
+</tr>
+<tr>
+<td align="center">dataset()</td>
+<td align="center">获取html data-开头的属性</td>
+</tr>
+</tbody></table>
+<h2 id="7-样式相关API"><a href="#7-样式相关API" class="headerlink" title="7. 样式相关API"></a>7. 样式相关API</h2><p>1、直接修改元素的样式</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">elem.style.color = <span class="string">'red'</span>;  </span><br><span class="line">elem.style.setProperty(<span class="string">'font-size'</span>, <span class="string">'16px'</span>);  </span><br><span class="line">elem.style.removeProperty(<span class="string">'color'</span>);</span><br></pre></td></tr></table></figure>
+<p>2、动态添加样式规则</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> style = <span class="built_in">document</span>.createElement(<span class="string">'style'</span>);  </span><br><span class="line">style.innerHTML = <span class="string">'body&#123;color:red&#125; #top:hover&#123;background-color: red;color: white;&#125;'</span>;  </span><br><span class="line"><span class="built_in">document</span>.head.appendChild(style);</span><br></pre></td></tr></table></figure>
+<p>3、classList获取样式class</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// div is an object reference to a &lt;div&gt; element with class="foo bar"</span></span><br><span class="line">div.classList.remove(<span class="string">"foo"</span>);</span><br><span class="line">div.classList.add(<span class="string">"anotherclass"</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// if visible is set remove it, otherwise add it</span></span><br><span class="line">div.classList.toggle(<span class="string">"visible"</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// add/remove visible, depending on test conditional, i less than 10</span></span><br><span class="line">div.classList.toggle(<span class="string">"visible"</span>, i &lt; <span class="number">10</span> );</span><br><span class="line"></span><br><span class="line">alert(div.classList.contains(<span class="string">"foo"</span>));</span><br><span class="line"></span><br><span class="line"><span class="comment">// add or remove multiple classes</span></span><br><span class="line">div.classList.add(<span class="string">"foo"</span>, <span class="string">"bar"</span>, <span class="string">"baz"</span>);</span><br><span class="line">div.classList.remove(<span class="string">"foo"</span>, <span class="string">"bar"</span>, <span class="string">"baz"</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// add or remove multiple classes using spread syntax</span></span><br><span class="line"><span class="keyword">let</span> cls = [<span class="string">"foo"</span>, <span class="string">"bar"</span>];</span><br><span class="line">div.classList.add(...cls); </span><br><span class="line">div.classList.remove(...cls);</span><br><span class="line"></span><br><span class="line"><span class="comment">// replace class "foo" with class "bar"</span></span><br><span class="line">div.classList.replace(<span class="string">"foo"</span>, <span class="string">"bar"</span>);</span><br></pre></td></tr></table></figure>
+<p>4、window.getComputedStyle<br>   通过 <code>element.sytle.xxx</code> 只能获取到内联样式，借助 <code>window.getComputedStyle</code> 可以获取应用到元素上的所有样式，<code>IE8</code>或更低版本不支持此方法。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> style = <span class="built_in">window</span>.getComputedStyle(element[, pseudoElt]);</span><br></pre></td></tr></table></figure>
+    </div>
+
+    
+    
+    
+      
+
+        <div class="reward-container">
+  <div></div>
+  <button disable="enable" onclick="var qr = document.getElementById(&quot;qr&quot;); qr.style.display = (qr.style.display === 'none') ? 'block' : 'none';">
+    打赏
+  </button>
+  <div id="qr" style="display: none;">
+      
+      <div style="display: inline-block;">
+        <img src="/images/wechatpay.png" alt="Kayden Li 微信支付">
+        <p>微信支付</p>
+      </div>
+
+  </div>
+</div>
+
+
+      <footer class="post-footer">
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2020/02/25/BOM/" rel="prev" title="BOM">
+      <i class="fa fa-chevron-left"></i> BOM
+    </a></div>
+      <div class="post-nav-item"></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+  </div>
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let activeClass = CONFIG.comments.activeClass;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        <div class="copyright" style="display:inline-block">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Kayden Li</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+      <span class="post-meta-item-text">站点总字数：</span>
+    <span title="站点总字数">42k</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+      <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
+    <span title="站点阅读时长">2:10</span>
+    <span>&nbsp;&nbsp;|&nbsp;&nbsp;</span>
+</div>
+
+
+        
+<div class="busuanzi-count" style="display:inline-block">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        访客数&nbsp;&nbsp;<span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        访问量&nbsp;&nbsp;<span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>
