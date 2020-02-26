@@ -1,6 +1,53 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>存储</title>
+    <url>/2020/02/26/%E5%AD%98%E5%82%A8/</url>
+    <content><![CDATA[<h1 id="存储"><a href="#存储" class="headerlink" title="存储"></a>存储</h1><h2 id="1-cookie"><a href="#1-cookie" class="headerlink" title="1. cookie"></a>1. cookie</h2><p>   <code>cookie</code>的大小限制为<code>4KB</code>左右。它的主要用途有保存登录信息，用来与服务器进行通信。</p>
+<h2 id="2-localStorage"><a href="#2-localStorage" class="headerlink" title="2. localStorage"></a>2. localStorage</h2><p>   用于本地存储。除非被清除，否则数据将永久保存</p>
+<h2 id="3-sessionStorage"><a href="#3-sessionStorage" class="headerlink" title="3. sessionStorage"></a>3. sessionStorage</h2><p>   用于本地存储。但是当页面关闭后数据就会清空。</p>
+<h2 id="4-三者的比较"><a href="#4-三者的比较" class="headerlink" title="4. 三者的比较"></a>4. 三者的比较</h2><table>
+<thead>
+<tr>
+<th align="center">特性</th>
+<th align="center">Cookie</th>
+<th align="center">localStorage</th>
+<th align="center">sessionStorage</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">数据的生命期</td>
+<td align="center">一般由服务器生成，可设置失效时间。如果在浏览器端生成Cookie，默认是关闭浏览器后失效</td>
+<td align="center">除非被清除，否则永久保存</td>
+<td align="center">仅在当前会话下有效，关闭页面或浏览器后被清除</td>
+</tr>
+<tr>
+<td align="center">存放数据大小</td>
+<td align="center">4K左右</td>
+<td align="center">一般为5MB</td>
+<td align="center">同localStorage</td>
+</tr>
+<tr>
+<td align="center">与服务器端通信</td>
+<td align="center">每次都会携带在HTTP头中，如果使用cookie保存过多数据会带来性能问题</td>
+<td align="center">仅在客户端（即浏览器）中保存，不参与和服务器的通信</td>
+<td align="center">同localStorage</td>
+</tr>
+<tr>
+<td align="center">易用性</td>
+<td align="center">需要程序员自己封装，源生的Cookie接口不友好</td>
+<td align="center">源生接口可以接受，亦可再次封装来对Object和Array有更好的支持</td>
+<td align="center">同localStorage</td>
+</tr>
+</tbody></table>
+<h2 id="5-应用场景"><a href="#5-应用场景" class="headerlink" title="5. 应用场景"></a>5. 应用场景</h2><p>   因为考虑到每个 <code>HTTP</code> 请求都会带着 <code>Cookie</code> 的信息，所以 <code>Cookie</code> 应该尽量精简。比较常用的一个应用场景就是判断用户是否登录。针对登录过的用户，服务器端会在他登录时往 <code>Cookie</code> 中插入一段加密过的唯一辨识单一用户的辨识码，下次只要读取这个值就可以判断当前用户是否登录啦。由于有存储功能，所以曾经还使用 <code>Cookie</code> 来保存用户在电商网站的购物车信息，如今有了 <code>localStorage</code>，似乎在这个方面也可以给 <code>Cookie</code> 放个假了~<br>   而另一方面 <code>localStorage</code> 接替了 <code>Cookie</code> 管理购物车的工作，同时也能胜任其他一些工作。比如<code>HTML5</code>游戏通常会产生一些本地数据，<code>localStorage</code> 也是非常适用的。如果遇到一些内容特别多的表单，为了优化用户体验，我们可能要把表单页面拆分成多个子页面，然后按步骤引导用户填写。这时候 <code>sessionStorage</code> 的作用就发挥出来了。</p>
+<h2 id="6-localStorage和sessionStorage操作"><a href="#6-localStorage和sessionStorage操作" class="headerlink" title="6. localStorage和sessionStorage操作"></a>6. localStorage和sessionStorage操作</h2><p><code>localStorage</code>和<code>sessionStorage</code>都具有相同的操作方法，例如<code>setItem</code>、<code>getItem</code>和<code>removeItem</code>等</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">//setItem存储value</span></span><br><span class="line">sessionStorage.setItem(<span class="string">"key"</span>, <span class="string">"value"</span>);</span><br><span class="line">localStorage.setItem(<span class="string">"site"</span>, <span class="string">"js8.in"</span>);</span><br><span class="line"><span class="comment">//getItem获取value</span></span><br><span class="line"><span class="keyword">var</span> value = sessionStorage.getItem(<span class="string">"key"</span>);   </span><br><span class="line"><span class="keyword">var</span> site = localStorage.getItem(<span class="string">"site"</span>);</span><br><span class="line"><span class="comment">//removeItem删除key</span></span><br><span class="line">sessionStorage.removeItem(<span class="string">"key"</span>);   </span><br><span class="line">localStorage.removeItem(<span class="string">"site"</span>);</span><br><span class="line"><span class="comment">//clear清除所有的key/value</span></span><br><span class="line">sessionStorage.clear();</span><br><span class="line">localStorage.clear();</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>js</category>
+      </categories>
+  </entry>
+  <entry>
     <title>跨域</title>
     <url>/2020/02/25/ajax/</url>
     <content><![CDATA[<h1 id="Ajax"><a href="#Ajax" class="headerlink" title="Ajax"></a>Ajax</h1><h2 id="1-ajax"><a href="#1-ajax" class="headerlink" title="1. ajax"></a>1. ajax</h2><p>   <code>AJAX</code> =<code>Asynchronous JavaScript and XML</code>（异步的 <code>JavaScript</code> 和<code>XML</code>）。<code>AJAX</code> 不是新的编程语言，而是一种<strong>使用现有标准的新方法</strong>。<code>AJAX</code> 最大的优点是在不重新加载整个页面的情况下，可以与服务器交换数据并更新部分网页内容。<code>AJAX</code> 不需要任何浏览器插件，但需要用户允许<code>JavaScript</code>在浏览器上执行。<br>   常见的<code>ajax</code>框架有<code>Fetch API</code>、<code>Axios</code>、<code>jQuery</code>、<code>SuperAgent</code>、<code>Request</code>等。其中，<code>Axios</code>是一个基于<code>XMLHttpRequest</code>而构建的现代<code>JavaScript</code>库，用于进行<code>AJAX</code>调用。它允许你从浏览器和服务器发出<code>HTTP</code>请求。此外，它还支持<code>ES6</code>原生的<code>Promise API</code>。<code>Axios</code>的其他突出特点包括：拦截请求和响应、使用<code>promise</code>转换请求和响应数据、自动转换<code>JSON</code>数据、取消实时请求。</p>
