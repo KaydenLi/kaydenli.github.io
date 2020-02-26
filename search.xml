@@ -7,13 +7,209 @@
 <h2 id="2-webpack核心概念"><a href="#2-webpack核心概念" class="headerlink" title="2. webpack核心概念"></a>2. webpack核心概念</h2><p>1.Entry（入口）<br>   指示 webpack 应该使用哪个模块，来作为构建其内部依赖图的开始。进入入口起点后，webpack 会找出有哪些模块和库是入口起点（直接和间接）依赖的。<br>2. Output（出口）<br>   告诉 webpack 在哪里输出它所创建的结果文件，以及如何命名这些文件，默认值为./dist。<br>3. Loader（模块转换器）<br>   将所有类型的文件转换为 webpack 能够处理的有效模块，然后你就可以利用 webpack 的打包能力，对它们进行处理。<br>4. Plugins（插件）<br>   在 Webpack 构建流程中的特定时机注入扩展逻辑来改变构建结果或做你想要的事情。<br>5. Module(模块)<br>   开发者将程序分解成离散功能块，并称之为模块，在webpack里一个模块对应着一个文件，webpack会从配置的 Entry 开始递归找出所有依赖的模块。</p>
 <h2 id="3-webpack执行流程"><a href="#3-webpack执行流程" class="headerlink" title="3. webpack执行流程"></a>3. webpack执行流程</h2><p>   <code>webpack</code>启动后会在<code>entry</code>里配置的<code>module</code>开始递归解析<code>entry</code>所依赖的所有<code>module</code>，每找到一个<code>module</code>, 就会根据配置的<code>loader</code>去找相应的转换规则，对<code>module</code>进行转换后再解析当前<code>module</code>所依赖的<code>module</code>，这些模块会以<code>entry</code>为分组，一个<code>entry</code>和所有相依赖的<code>module</code>也就是一个<code>chunk</code>，最后<code>webpack</code>会把所有<code>chunk</code>转换成文件输出，在整个流程中<code>webpack</code>会在恰当的时机执行<code>plugin</code>的逻辑。</p>
 <h2 id="4-loader"><a href="#4-loader" class="headerlink" title="4. loader"></a>4. loader</h2><p>   在webpack看来一切都是模块！这就是它不可不说的优点，包括你的JavaScript代码，也包括CSS和fonts以及图片等等等，只有通过合适的loaders，它们都可以被当做模块被处理。</p>
-<p>文件<br>|laoder|作用|<br>|:—:|:—:|<br>|raw-loader|加载文件原始内容（utf-8）|<br>|val-loader| 将代码作为模块执行，并将 exports 转为 JS 代码|<br>|url-loader| 像 file loader 一样工作，但如果文件小于限制，可以返回 data URL|<br>|file-loader| 将文件发送到输出文件夹，并返回（相对）URL|</p>
-<p>JSON<br>|laoder|作用|<br>|:—:|:—:|<br>|json-loader| 加载 JSON 文件（默认包含）|<br>|json5-loader| 加载和转译 JSON 5 文件|<br>|cson-loader |加载和转译 CSON 文件|</p>
-<p>转换编译(Transpiling)<br>|laoder|作用|<br>|:—:|:—:|<br>|script-loader| 在全局上下文中执行一次 JavaScript 文件（如在 script 标签），不需要解析|<br>|babel-loader| 加载 ES2015+ 代码，然后使用 Babel 转译为 ES5|<br>|buble-loader| 使用 Bublé 加载 ES2015+ 代码，并且将代码转译为 ES5|<br>|traceur-loader| 加载 ES2015+ 代码，然后使用 Traceur 转译为 ES5|<br>|ts-loader或 awesome-typescript-loader| 像 JavaScript 一样加载 TypeScript 2.0+ |<br>|coffee-loader| 像 JavaScript 一样加载 CoffeeScript|</p>
-<p>模板(Templating)<br>|laoder|作用|<br>|:—:|:—:|<br>|html-loader| 导出 HTML 为字符串，需要引用静态资源|<br>|pug-loader| 加载 Pug 模板并返回一个函数|<br>|jade-loader| 加载 Jade 模板并返回一个函数|<br>|markdown-loader| 将 Markdown 转译为 HTML|<br>|react-markdown-loader| 使用 markdown-parse parser(解析器) 将 Markdown 编译为 React 组件|<br>|posthtml-loader| 使用 PostHTML 加载并转换 HTML 文件|<br>|handlebars-loader| 将 Handlebars 转移为 HTML|<br>|markup-inline-loader| 将内联的 SVG/MathML 文件转换为 HTML。在应用于图标字体，或将 CSS 动画应用于 SVG 时非常有用。|</p>
-<p>样式<br>|laoder|作用|<br>|:—:|:—:|<br>|style-loader| 将模块的导出作为样式添加到 DOM 中|<br>|css-loader| 解析 CSS 文件后，使用 import 加载，并且返回 CSS 代码|<br>|less-loader| 加载和转译 LESS 文件|<br>|sass-loader| 加载和转译 SASS/SCSS 文件|<br>|postcss-loader| 使用 PostCSS 加载和转译 CSS/SSS 文件|<br>|stylus-loader| 加载和转译 Stylus 文件|</p>
-<p>清理和测试(Linting &amp;&amp; Testing)<br>|laoder|作用|<br>|:—:|:—:|<br>|mocha-loader| 使用 mocha 测试（浏览器/NodeJS）|<br>|eslint-loader| PreLoader，使用 ESLint 清理代码|<br>|jshint-loader| PreLoader，使用 JSHint 清理代码|<br>|jscs-loader| PreLoader，使用 JSCS 检查代码样式|<br>|coverjs-loader| PreLoader，使用 CoverJS 确定测试覆盖率|</p>
-<p>框架(Frameworks)<br>|laoder|作用|<br>|:—:|:—:|<br>|vue-loader| 加载和转译 Vue 组件|<br>|polymer-loader| 使用选择预处理器(preprocessor)处理，并且 require() 类似一等模块(first-class)的Web 组件|<br>|angular2-template-loader| 加载和转译 Angular 组件|</p>
+<p>文件</p>
+<table>
+<thead>
+<tr>
+<th align="center">laoder</th>
+<th align="center">作用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">raw-loader</td>
+<td align="center">加载文件原始内容（utf-8）</td>
+</tr>
+<tr>
+<td align="center">val-loader</td>
+<td align="center">将代码作为模块执行，并将 exports 转为 JS 代码</td>
+</tr>
+<tr>
+<td align="center">url-loader</td>
+<td align="center">像 file loader 一样工作，但如果文件小于限制，可以返回 data URL</td>
+</tr>
+<tr>
+<td align="center">file-loader</td>
+<td align="center">将文件发送到输出文件夹，并返回（相对）URL</td>
+</tr>
+</tbody></table>
+<p>JSON</p>
+<table>
+<thead>
+<tr>
+<th align="center">laoder</th>
+<th align="center">作用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">json-loader</td>
+<td align="center">加载 JSON 文件（默认包含）</td>
+</tr>
+<tr>
+<td align="center">json5-loader</td>
+<td align="center">加载和转译 JSON 5 文件</td>
+</tr>
+<tr>
+<td align="center">cson-loader</td>
+<td align="center">加载和转译 CSON 文件</td>
+</tr>
+</tbody></table>
+<p>转换编译(Transpiling)</p>
+<table>
+<thead>
+<tr>
+<th align="center">laoder</th>
+<th align="center">作用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">script-loader</td>
+<td align="center">在全局上下文中执行一次 JavaScript 文件（如在 script 标签），不需要解析</td>
+</tr>
+<tr>
+<td align="center">babel-loader</td>
+<td align="center">加载 ES2015+ 代码，然后使用 Babel 转译为 ES5</td>
+</tr>
+<tr>
+<td align="center">buble-loader</td>
+<td align="center">使用 Bublé 加载 ES2015+ 代码，并且将代码转译为 ES5</td>
+</tr>
+<tr>
+<td align="center">traceur-loader</td>
+<td align="center">加载 ES2015+ 代码，然后使用 Traceur 转译为 ES5</td>
+</tr>
+<tr>
+<td align="center">ts-loader或 awesome-typescript-loader</td>
+<td align="center">像 JavaScript 一样加载 TypeScript 2.0+</td>
+</tr>
+<tr>
+<td align="center">coffee-loader</td>
+<td align="center">像 JavaScript 一样加载 CoffeeScript</td>
+</tr>
+</tbody></table>
+<p>模板(Templating)</p>
+<table>
+<thead>
+<tr>
+<th align="center">laoder</th>
+<th align="center">作用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">html-loader</td>
+<td align="center">导出 HTML 为字符串，需要引用静态资源</td>
+</tr>
+<tr>
+<td align="center">pug-loader</td>
+<td align="center">加载 Pug 模板并返回一个函数</td>
+</tr>
+<tr>
+<td align="center">jade-loader</td>
+<td align="center">加载 Jade 模板并返回一个函数</td>
+</tr>
+<tr>
+<td align="center">markdown-loader</td>
+<td align="center">将 Markdown 转译为 HTML</td>
+</tr>
+<tr>
+<td align="center">react-markdown-loader</td>
+<td align="center">使用 markdown-parse parser(解析器) 将 Markdown 编译为 React 组件</td>
+</tr>
+<tr>
+<td align="center">posthtml-loader</td>
+<td align="center">使用 PostHTML 加载并转换 HTML 文件</td>
+</tr>
+<tr>
+<td align="center">handlebars-loader</td>
+<td align="center">将 Handlebars 转移为 HTML</td>
+</tr>
+<tr>
+<td align="center">markup-inline-loader</td>
+<td align="center">将内联的 SVG/MathML 文件转换为 HTML。在应用于图标字体，或将 CSS 动画应用于 SVG 时非常有用。</td>
+</tr>
+</tbody></table>
+<p>样式</p>
+<table>
+<thead>
+<tr>
+<th align="center">laoder</th>
+<th align="center">作用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">style-loader</td>
+<td align="center">将模块的导出作为样式添加到 DOM 中</td>
+</tr>
+<tr>
+<td align="center">css-loader</td>
+<td align="center">解析 CSS 文件后，使用 import 加载，并且返回 CSS 代码</td>
+</tr>
+<tr>
+<td align="center">less-loader</td>
+<td align="center">加载和转译 LESS 文件</td>
+</tr>
+<tr>
+<td align="center">sass-loader</td>
+<td align="center">加载和转译 SASS/SCSS 文件</td>
+</tr>
+<tr>
+<td align="center">postcss-loader</td>
+<td align="center">使用 PostCSS 加载和转译 CSS/SSS 文件</td>
+</tr>
+<tr>
+<td align="center">stylus-loader</td>
+<td align="center">加载和转译 Stylus 文件</td>
+</tr>
+</tbody></table>
+<p>清理和测试(Linting &amp;&amp; Testing)</p>
+<table>
+<thead>
+<tr>
+<th align="center">laoder</th>
+<th align="center">作用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">mocha-loader</td>
+<td align="center">使用 mocha 测试（浏览器/NodeJS）</td>
+</tr>
+<tr>
+<td align="center">eslint-loader</td>
+<td align="center">PreLoader，使用 ESLint 清理代码</td>
+</tr>
+<tr>
+<td align="center">jshint-loader</td>
+<td align="center">PreLoader，使用 JSHint 清理代码</td>
+</tr>
+<tr>
+<td align="center">jscs-loader</td>
+<td align="center">PreLoader，使用 JSCS 检查代码样式</td>
+</tr>
+<tr>
+<td align="center">coverjs-loader</td>
+<td align="center">PreLoader，使用 CoverJS 确定测试覆盖率</td>
+</tr>
+</tbody></table>
+<p>框架(Frameworks)</p>
+<table>
+<thead>
+<tr>
+<th align="center">laoder</th>
+<th align="center">作用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">vue-loader</td>
+<td align="center">加载和转译 Vue 组件</td>
+</tr>
+<tr>
+<td align="center">polymer-loader</td>
+<td align="center">使用选择预处理器(preprocessor)处理，并且 require() 类似一等模块(first-class)的Web 组件</td>
+</tr>
+<tr>
+<td align="center">angular2-template-loader</td>
+<td align="center">加载和转译 Angular 组件</td>
+</tr>
+</tbody></table>
 <h2 id="4-plugins"><a href="#4-plugins" class="headerlink" title="4. plugins"></a>4. plugins</h2><table>
 <thead>
 <tr>
