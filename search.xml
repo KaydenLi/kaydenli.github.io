@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>安全性问题</title>
+    <url>/2020/02/26/%E5%AE%89%E5%85%A8%E6%80%A7/</url>
+    <content><![CDATA[<h1 id="安全性问题"><a href="#安全性问题" class="headerlink" title="安全性问题"></a>安全性问题</h1><h2 id="1-SQL注入"><a href="#1-SQL注入" class="headerlink" title="1. SQL注入"></a>1. SQL注入</h2><p>   通过把<code>SQL命令</code>插入到<code>Web表单</code>提交或输入域名或页面请求的查询字符串，最终达到欺骗服务器执行恶意的<code>SQL</code>命令。防护措施：前端页面要校验用户的输入数据，后端不要使用动态<code>SQL语句</code>，不要直接存放机密数据。（严格说，<code>sql注入</code>属于后端的安全问题）</p>
+<h2 id="2-XXS——跨站脚本攻击"><a href="#2-XXS——跨站脚本攻击" class="headerlink" title="2. XXS——跨站脚本攻击"></a>2. XXS——跨站脚本攻击</h2><p>   者将恶意脚本插入到网页中，网页会将这些恶意脚本当正常脚本来执行。所有可输入的地方没有处理输入的数据，就可能存在<code>xxs</code>漏洞。为了防护应该尽可能完善过滤体系，如前端替换关键字，如<code>&lt;</code>替换为<code>&lt;</code>，但前端替换影响性能，一般都后端替换。</p>
+<h2 id="3-iframe风险"><a href="#3-iframe风险" class="headerlink" title="3.  iframe风险"></a>3.  iframe风险</h2><p>   <code>iframe</code>中的内容是由第三方来提供的，默认情况下他们不受我们的控制，他们可以在<code>iframe</code>中运行<code>JavaScirpt</code>脚本、<code>Flash</code>插件、弹出对话框等等，这可能会破坏前端用户体验。如果<code>iframe</code>中的域名因为过期而被恶意攻击者抢注，或者第三方被黑客攻破，<code>iframe</code>中的内容被替换掉了，从而利用用户浏览器中的安全漏洞下载安装木马、恶意勒索软件，这样就会有很大的安全隐患了。</p>
+<h2 id="4-XSRF——跨站请求伪造"><a href="#4-XSRF——跨站请求伪造" class="headerlink" title="4.  XSRF——跨站请求伪造"></a>4.  XSRF——跨站请求伪造</h2><p>   <code>XSRF</code>攻击过程：受害者用户登录网站<code>A</code>，输入个人信息，在本地保存有服务器生成的<code>cookie</code>。然后在<code>A</code>网站点击由攻击者构建一条恶意链接跳转到<code>B</code>网站,然后<code>B</code>网站携带着的用户<code>cookie</code>信息去访问<code>B</code>网站。让<code>A</code>网站造成是用户自己访问的假相，从而来进行一些列的操作，常见的就是转账。预防方案：增加验证流程，如指纹，密码，短信验证码，实际工作中前端也就是配合后端做这些验证。</p>]]></content>
+      <categories>
+        <category>js</category>
+      </categories>
+  </entry>
+  <entry>
     <title>性能优化</title>
     <url>/2020/02/26/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/</url>
     <content><![CDATA[<h1 id="性能优化"><a href="#性能优化" class="headerlink" title="性能优化"></a>性能优化</h1><p>   转载自文章：<a href="https://www.jianshu.com/p/fe32ef31deed" target="_blank" rel="noopener">前端性能优化常用总结</a></p>
