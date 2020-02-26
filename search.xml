@@ -1,6 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>性能优化</title>
+    <url>/2020/02/26/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/</url>
+    <content><![CDATA[<h1 id="性能优化"><a href="#性能优化" class="headerlink" title="性能优化"></a>性能优化</h1><p>   转载自文章：<a href="https://www.jianshu.com/p/fe32ef31deed" target="_blank" rel="noopener">前端性能优化常用总结</a></p>
+<p>   参考文章：<a href="https://juejin.im/post/59d489156fb9a00a571d6509" target="_blank" rel="noopener">浏览器渲染过程与性能优化</a></p>
+<h2 id="1-网络方面"><a href="#1-网络方面" class="headerlink" title="1. 网络方面"></a>1. 网络方面</h2><ol>
+<li>减少<code>http</code>请求：在<code>YUI35</code>规则中也有提到，主要是优化<code>js</code>、<code>css</code>和图片资源三个方面，因为<code>html</code>是没有办法避免的。因此，我们资源合并来实现：合并<code>js</code>文件；合并<code>css</code>文件；雪碧图的使用(<code>css sprite</code>)；使用<code>base64</code>表示简单的图片。</li>
+<li>减小资源体积：可以通过以下几个方面进行实施：<code>gzip</code>压缩；<code>js</code>混淆；<code>css</code>压缩；图片压缩。</li>
+<li>缓存：可以通过以下几个方面来描述：<code>DNS</code>缓存；<code>CDN</code>部署与缓存；<code>http</code>缓存。<code>CDN</code>缓存，<code>CDN</code>作为静态资源文件的分发网络，本身就已经提升了，网站静态资源的获取速度，加快网站的加载速度，同时也给静态资源做好缓存工作，有效的利用已缓存的静态资源，加快获取速度。</li>
+<li>移动端优化：使用以下几种方式来加快移动端网络方面的优化：使用长<code>cache</code>，减少重定向；首屏优化，保证首屏加载数据小于<code>14kb</code>；不滥用<code>web</code>字体。</li>
+</ol>
+<h2 id="2-渲染和DOM操作方面"><a href="#2-渲染和DOM操作方面" class="headerlink" title="2. 渲染和DOM操作方面"></a>2. 渲染和DOM操作方面</h2><ol>
+<li>优化网页渲染：<code>css</code>的文件放在头部，<code>js</code>文件放在尾部或者异步；尽量避免內联样式。</li>
+<li><code>DOM</code>操作优化：避免在<code>document</code>上直接进行频繁的<code>DOM</code>操作；使用<code>classname</code>代替大量的内联样式修改；对于复杂的<code>UI</code>元素，设置<code>position</code>为<code>absolute</code>或<code>fixed</code>；尽量使用<code>css</code>动画；使用<code>requestAnimationFrame</code>代替<code>setInterval</code>操作；适当使用<code>canvas</code>；尽量减少<code>css</code>表达式的使用；使用事件代理。</li>
+<li>操作细节注意：避免图片或者<code>frame</code>使用空<code>src</code>；在<code>css</code>属性为<code>0</code>时，去掉单位；禁止图像缩放；正确的<code>css</code>前缀的使用；移除空的<code>css</code>规则；对于<code>css</code>中可继承的属性，如<code>font-size</code>，尽量使用继承，少一点设置；缩短<code>css</code>选择器，多使用伪元素等帮助定位。</li>
+<li>移动端优化：长列表滚动优化；函数防抖和函数节流；使用<code>touchstart</code>、<code>touchend</code>代替<code>click</code>；<code>HTML</code>的<code>viewport</code>设置；开启<code>GPU</code>渲染加速。</li>
+</ol>
+<h2 id="3-数据方面"><a href="#3-数据方面" class="headerlink" title="3. 数据方面"></a>3. 数据方面</h2><ol>
+<li>图片加载处理：图片预加载；图片懒加载；首屏加载时进度条的显示。</li>
+<li>异步请求的优化：使用正常的<code>json</code>数据格式进行交互；部分常用数据的缓存；数据埋点和统计。</li>
+</ol>]]></content>
+      <categories>
+        <category>js</category>
+      </categories>
+  </entry>
+  <entry>
     <title>页面加载与浏览器渲染</title>
     <url>/2020/02/26/%E9%A1%B5%E9%9D%A2%E5%8A%A0%E8%BD%BD%E4%B8%8E%E6%B5%8F%E8%A7%88%E5%99%A8%E6%B8%B2%E6%9F%93/</url>
     <content><![CDATA[<h1 id="页面加载与浏览器渲染"><a href="#页面加载与浏览器渲染" class="headerlink" title="页面加载与浏览器渲染"></a>页面加载与浏览器渲染</h1><h2 id="1-浏览器请求页面的过程"><a href="#1-浏览器请求页面的过程" class="headerlink" title="1. 浏览器请求页面的过程"></a>1. 浏览器请求页面的过程</h2><ol>
