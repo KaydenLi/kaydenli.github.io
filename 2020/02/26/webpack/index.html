@@ -46,19 +46,19 @@
   };
 </script>
 
-  <meta name="description" content="介绍了CSS中常见的具有继承性的属性。">
+  <meta name="description" content="介绍 webppack 的基础知识。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="具有继承性的CSS样式属性">
-<meta property="og:url" content="http://yoursite.com/2020/02/04/%E5%85%B7%E6%9C%89%E7%BB%A7%E6%89%BF%E6%80%A7%E7%9A%84CSS%E6%A0%B7%E5%BC%8F%E5%B1%9E%E6%80%A7/index.html">
+<meta property="og:title" content="webpack">
+<meta property="og:url" content="http://yoursite.com/2020/02/26/webpack/index.html">
 <meta property="og:site_name" content="KaydenLi">
-<meta property="og:description" content="介绍了CSS中常见的具有继承性的属性。">
+<meta property="og:description" content="介绍 webppack 的基础知识。">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2020-02-04T03:47:38.192Z">
-<meta property="article:modified_time" content="2020-02-04T03:47:38.192Z">
+<meta property="article:published_time" content="2020-02-26T06:52:15.358Z">
+<meta property="article:modified_time" content="2020-02-26T06:52:05.183Z">
 <meta property="article:author" content="Kayden Li">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="http://yoursite.com/2020/02/04/%E5%85%B7%E6%9C%89%E7%BB%A7%E6%89%BF%E6%80%A7%E7%9A%84CSS%E6%A0%B7%E5%BC%8F%E5%B1%9E%E6%80%A7/">
+<link rel="canonical" href="http://yoursite.com/2020/02/26/webpack/">
 
 
 <script id="page-configurations">
@@ -70,7 +70,7 @@
   };
 </script>
 
-  <title>具有继承性的CSS样式属性 | KaydenLi</title>
+  <title>webpack | KaydenLi</title>
   
 
 
@@ -180,7 +180,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/02/04/%E5%85%B7%E6%9C%89%E7%BB%A7%E6%89%BF%E6%80%A7%E7%9A%84CSS%E6%A0%B7%E5%BC%8F%E5%B1%9E%E6%80%A7/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/02/26/webpack/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -193,7 +193,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          具有继承性的CSS样式属性
+          webpack
         </h1>
 
         <div class="post-meta">
@@ -202,8 +202,9 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
+              
 
-              <time title="创建时间：2020-02-04 11:47:38" itemprop="dateCreated datePublished" datetime="2020-02-04T11:47:38+08:00">2020-02-04</time>
+              <time title="创建时间：2020-02-26 14:52:15 / 修改时间：14:52:05" itemprop="dateCreated datePublished" datetime="2020-02-26T14:52:15+08:00">2020-02-26</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -211,8 +212,8 @@
               </span>
               <span class="post-meta-item-text">分类于</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/CSS/" itemprop="url" rel="index">
-                    <span itemprop="name">CSS</span>
+                  <a href="/categories/js/" itemprop="url" rel="index">
+                    <span itemprop="name">js</span>
                   </a>
                 </span>
             </span>
@@ -230,14 +231,14 @@
                 <i class="fa fa-file-word-o"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>700</span>
+              <span>3.5k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
                 <i class="fa fa-clock-o"></i>
               </span>
                 <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>2 分钟</span>
+              <span>11 分钟</span>
             </span>
 
         </div>
@@ -249,14 +250,129 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h1 id="具有继承性的CSS样式属性"><a href="#具有继承性的CSS样式属性" class="headerlink" title="具有继承性的CSS样式属性"></a>具有继承性的CSS样式属性</h1><h2 id="1-字体系列属性"><a href="#1-字体系列属性" class="headerlink" title="1. 字体系列属性"></a>1. 字体系列属性</h2><p>font：组合字体<br>font-family：规定元素的字体系列<br>font-weight：设置字体的粗细<br>font-size：设置字体的尺寸<br>font-style：定义字体的风格<br>font-variant：设置小型大写字母的字体显示文本，这意味着所有的小写字母均会被转换为大写，但是所有使用小型大写字体的字母与其余文本相比，其字体尺寸更小。<br>font-stretch：对当前的 font-family 进行伸缩变形。所有主流浏览器都不支持。<br>font-size-adjust：为某个元素规定一个 aspect 值，这样就可以保持首选字体的 x-height。</p>
-<h2 id="2-文本系列属性"><a href="#2-文本系列属性" class="headerlink" title="2. 文本系列属性"></a>2. 文本系列属性</h2><p>text-indent：文本缩进<br>text-align：文本水平对齐<br>line-height：行高<br>word-spacing：增加或减少单词间的空白（即字间隔）<br>letter-spacing：增加或减少字符间的空白（字符间距）<br>text-transform：控制文本大小写<br>direction：规定文本的书写方向<br>color：文本颜色</p>
-<h2 id="3-元素可见性"><a href="#3-元素可见性" class="headerlink" title="3. 元素可见性"></a>3. 元素可见性</h2><p>visibility</p>
-<h2 id="4-表格布局属性"><a href="#4-表格布局属性" class="headerlink" title="4. 表格布局属性"></a>4. 表格布局属性</h2><p>caption-side<br>border-collapse<br>border-spacing<br>empty-cells<br>table-layout</p>
-<h2 id="5-列表布局属性"><a href="#5-列表布局属性" class="headerlink" title="5. 列表布局属性"></a>5. 列表布局属性</h2><p>list-style-type<br>list-style-image<br>list-style-position<br>list-style</p>
-<h2 id="6-生成内容属性"><a href="#6-生成内容属性" class="headerlink" title="6. 生成内容属性"></a>6. 生成内容属性</h2><p>quotes</p>
-<h2 id="7-光标属性"><a href="#7-光标属性" class="headerlink" title="7. 光标属性"></a>7. 光标属性</h2><p>cursor</p>
-<h2 id="8-页面样式属性"><a href="#8-页面样式属性" class="headerlink" title="8.页面样式属性"></a>8.页面样式属性</h2><p>page<br>page-break-inside<br>windows<br>orphans</p>
+        <h1 id="Webpack"><a href="#Webpack" class="headerlink" title="Webpack"></a>Webpack</h1><h2 id="1-Webpack的基本概念"><a href="#1-Webpack的基本概念" class="headerlink" title="1. Webpack的基本概念"></a>1. Webpack的基本概念</h2><p>   <code>webpack</code>它做的事情是，分析你的项目结构，找到<code>JavaScript</code>模块以及其它的一些浏览器不能直接运行的拓展语言（<code>Scss</code>，<code>TypeScript</code>等），并将其打包为合适的格式以供浏览器使用。</p>
+<h2 id="2-webpack核心概念"><a href="#2-webpack核心概念" class="headerlink" title="2. webpack核心概念"></a>2. webpack核心概念</h2><p>1.Entry（入口）<br>   指示 webpack 应该使用哪个模块，来作为构建其内部依赖图的开始。进入入口起点后，webpack 会找出有哪些模块和库是入口起点（直接和间接）依赖的。<br>2. Output（出口）<br>   告诉 webpack 在哪里输出它所创建的结果文件，以及如何命名这些文件，默认值为./dist。<br>3. Loader（模块转换器）<br>   将所有类型的文件转换为 webpack 能够处理的有效模块，然后你就可以利用 webpack 的打包能力，对它们进行处理。<br>4. Plugins（插件）<br>   在 Webpack 构建流程中的特定时机注入扩展逻辑来改变构建结果或做你想要的事情。<br>5. Module(模块)<br>   开发者将程序分解成离散功能块，并称之为模块，在webpack里一个模块对应着一个文件，webpack会从配置的 Entry 开始递归找出所有依赖的模块。</p>
+<h2 id="3-webpack执行流程"><a href="#3-webpack执行流程" class="headerlink" title="3. webpack执行流程"></a>3. webpack执行流程</h2><p>   <code>webpack</code>启动后会在<code>entry</code>里配置的<code>module</code>开始递归解析<code>entry</code>所依赖的所有<code>module</code>，每找到一个<code>module</code>, 就会根据配置的<code>loader</code>去找相应的转换规则，对<code>module</code>进行转换后再解析当前<code>module</code>所依赖的<code>module</code>，这些模块会以<code>entry</code>为分组，一个<code>entry</code>和所有相依赖的<code>module</code>也就是一个<code>chunk</code>，最后<code>webpack</code>会把所有<code>chunk</code>转换成文件输出，在整个流程中<code>webpack</code>会在恰当的时机执行<code>plugin</code>的逻辑。</p>
+<h2 id="4-loader"><a href="#4-loader" class="headerlink" title="4. loader"></a>4. loader</h2><p>   在webpack看来一切都是模块！这就是它不可不说的优点，包括你的JavaScript代码，也包括CSS和fonts以及图片等等等，只有通过合适的loaders，它们都可以被当做模块被处理。</p>
+<p>文件<br>|laoder|作用|<br>|:—:|:—:|<br>|raw-loader|加载文件原始内容（utf-8）|<br>|val-loader| 将代码作为模块执行，并将 exports 转为 JS 代码|<br>|url-loader| 像 file loader 一样工作，但如果文件小于限制，可以返回 data URL|<br>|file-loader| 将文件发送到输出文件夹，并返回（相对）URL|</p>
+<p>JSON<br>|laoder|作用|<br>|:—:|:—:|<br>|json-loader| 加载 JSON 文件（默认包含）|<br>|json5-loader| 加载和转译 JSON 5 文件|<br>|cson-loader |加载和转译 CSON 文件|</p>
+<p>转换编译(Transpiling)<br>|laoder|作用|<br>|:—:|:—:|<br>|script-loader| 在全局上下文中执行一次 JavaScript 文件（如在 script 标签），不需要解析|<br>|babel-loader| 加载 ES2015+ 代码，然后使用 Babel 转译为 ES5|<br>|buble-loader| 使用 Bublé 加载 ES2015+ 代码，并且将代码转译为 ES5|<br>|traceur-loader| 加载 ES2015+ 代码，然后使用 Traceur 转译为 ES5|<br>|ts-loader或 awesome-typescript-loader| 像 JavaScript 一样加载 TypeScript 2.0+ |<br>|coffee-loader| 像 JavaScript 一样加载 CoffeeScript|</p>
+<p>模板(Templating)<br>|laoder|作用|<br>|:—:|:—:|<br>|html-loader| 导出 HTML 为字符串，需要引用静态资源|<br>|pug-loader| 加载 Pug 模板并返回一个函数|<br>|jade-loader| 加载 Jade 模板并返回一个函数|<br>|markdown-loader| 将 Markdown 转译为 HTML|<br>|react-markdown-loader| 使用 markdown-parse parser(解析器) 将 Markdown 编译为 React 组件|<br>|posthtml-loader| 使用 PostHTML 加载并转换 HTML 文件|<br>|handlebars-loader| 将 Handlebars 转移为 HTML|<br>|markup-inline-loader| 将内联的 SVG/MathML 文件转换为 HTML。在应用于图标字体，或将 CSS 动画应用于 SVG 时非常有用。|</p>
+<p>样式<br>|laoder|作用|<br>|:—:|:—:|<br>|style-loader| 将模块的导出作为样式添加到 DOM 中|<br>|css-loader| 解析 CSS 文件后，使用 import 加载，并且返回 CSS 代码|<br>|less-loader| 加载和转译 LESS 文件|<br>|sass-loader| 加载和转译 SASS/SCSS 文件|<br>|postcss-loader| 使用 PostCSS 加载和转译 CSS/SSS 文件|<br>|stylus-loader| 加载和转译 Stylus 文件|</p>
+<p>清理和测试(Linting &amp;&amp; Testing)<br>|laoder|作用|<br>|:—:|:—:|<br>|mocha-loader| 使用 mocha 测试（浏览器/NodeJS）|<br>|eslint-loader| PreLoader，使用 ESLint 清理代码|<br>|jshint-loader| PreLoader，使用 JSHint 清理代码|<br>|jscs-loader| PreLoader，使用 JSCS 检查代码样式|<br>|coverjs-loader| PreLoader，使用 CoverJS 确定测试覆盖率|</p>
+<p>框架(Frameworks)<br>|laoder|作用|<br>|:—:|:—:|<br>|vue-loader| 加载和转译 Vue 组件|<br>|polymer-loader| 使用选择预处理器(preprocessor)处理，并且 require() 类似一等模块(first-class)的Web 组件|<br>|angular2-template-loader| 加载和转译 Angular 组件|</p>
+<h2 id="4-plugins"><a href="#4-plugins" class="headerlink" title="4. plugins"></a>4. plugins</h2><table>
+<thead>
+<tr>
+<th align="center">Name</th>
+<th align="center">Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">AggressiveSplittingPlugin</td>
+<td align="center">将原来的 chunk 分成更小的 chunk</td>
+</tr>
+<tr>
+<td align="center">BabelMinifyWebpackPlugin</td>
+<td align="center">使用 babel-minify进行压缩</td>
+</tr>
+<tr>
+<td align="center">BannerPlugin</td>
+<td align="center">在每个生成的 chunk 顶部添加 banner</td>
+</tr>
+<tr>
+<td align="center">CommonsChunkPlugin</td>
+<td align="center">提取 chunks 之间共享的通用模块</td>
+</tr>
+<tr>
+<td align="center">CompressionWebpackPlugin</td>
+<td align="center">预先准备的资源压缩版本，使用 Content-Encoding 提供访问服务</td>
+</tr>
+<tr>
+<td align="center">ContextReplacementPlugin</td>
+<td align="center">重写 require 表达式的推断上下文</td>
+</tr>
+<tr>
+<td align="center">CopyWebpackPlugin</td>
+<td align="center">将单个文件或整个目录复制到构建目录</td>
+</tr>
+<tr>
+<td align="center">DefinePlugin</td>
+<td align="center">允许在编译时(compile time)配置的全局常量</td>
+</tr>
+<tr>
+<td align="center">DllPlugin</td>
+<td align="center">为了极大减少构建时间，进行分离打包</td>
+</tr>
+<tr>
+<td align="center">EnvironmentPlugin</td>
+<td align="center">DefinePlugin 中 process.env 键的简写方式。</td>
+</tr>
+<tr>
+<td align="center">ExtractTextWebpackPlugin</td>
+<td align="center">从 bundle 中提取文本（CSS）到单独的文件</td>
+</tr>
+<tr>
+<td align="center">HotModuleReplacementPlugin</td>
+<td align="center">启用模块热替换(Enable Hot Module Replacement - HMR)</td>
+</tr>
+<tr>
+<td align="center">HtmlWebpackPlugin</td>
+<td align="center">简单创建 HTML 文件，用于服务器访问</td>
+</tr>
+<tr>
+<td align="center">I18nWebpackPlugin</td>
+<td align="center">为 bundle 增加国际化支持</td>
+</tr>
+<tr>
+<td align="center">IgnorePlugin</td>
+<td align="center">从 bundle 中排除某些模块</td>
+</tr>
+<tr>
+<td align="center">LimitChunkCountPlugin</td>
+<td align="center">设置 chunk 的最小/最大限制，以微调和控制 chunk</td>
+</tr>
+<tr>
+<td align="center">LoaderOptionsPlugin</td>
+<td align="center">用于从 webpack 1 迁移到 webpack 2</td>
+</tr>
+<tr>
+<td align="center">MinChunkSizePlugin</td>
+<td align="center">确保 chunk 大小超过指定限制</td>
+</tr>
+<tr>
+<td align="center">NoEmitOnErrorsPlugin</td>
+<td align="center">在输出阶段时，遇到编译错误跳过</td>
+</tr>
+<tr>
+<td align="center">NormalModuleReplacementPlugin</td>
+<td align="center">替换与正则表达式匹配的资源</td>
+</tr>
+<tr>
+<td align="center">NpmInstallWebpackPlugin</td>
+<td align="center">在开发时自动安装缺少的依赖</td>
+</tr>
+<tr>
+<td align="center">ProvidePlugin</td>
+<td align="center">不必通过 import/require 使用模块</td>
+</tr>
+<tr>
+<td align="center">SourceMapDevToolPlugin</td>
+<td align="center">对 source map 进行更细粒度的控制</td>
+</tr>
+<tr>
+<td align="center">EvalSourceMapDevToolPlugin</td>
+<td align="center">对 eval source map 进行更细粒度的控制</td>
+</tr>
+<tr>
+<td align="center">UglifyjsWebpackPlugin</td>
+<td align="center">可以控制项目中 UglifyJS 的版本</td>
+</tr>
+<tr>
+<td align="center">ZopfliWebpackPlugin</td>
+<td align="center">通过 node-zopfli 将资源预先压缩的版本</td>
+</tr>
+</tbody></table>
     </div>
 
     
@@ -288,13 +404,10 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2020/02/03/web%E6%97%A0%E9%9A%9C%E7%A2%8D/" rel="prev" title="web 无障碍">
-      <i class="fa fa-chevron-left"></i> web 无障碍
+    <a href="/2020/02/26/%E6%A8%A1%E5%9D%97%E5%8C%96/" rel="prev" title="模块化">
+      <i class="fa fa-chevron-left"></i> 模块化
     </a></div>
-      <div class="post-nav-item">
-    <a href="/2020/02/23/js%E5%88%9B%E5%BB%BA%E5%AF%B9%E8%B1%A1%E7%9A%84%E6%96%B9%E5%BC%8F/" rel="next" title="js创建对象的方式">
-      js创建对象的方式 <i class="fa fa-chevron-right"></i>
-    </a></div>
+      <div class="post-nav-item"></div>
     </div>
       </footer>
     
