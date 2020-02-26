@@ -1,6 +1,38 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>页面加载与浏览器渲染</title>
+    <url>/2020/02/26/%E9%A1%B5%E9%9D%A2%E5%8A%A0%E8%BD%BD%E4%B8%8E%E6%B5%8F%E8%A7%88%E5%99%A8%E6%B8%B2%E6%9F%93/</url>
+    <content><![CDATA[<h1 id="页面加载与浏览器渲染"><a href="#页面加载与浏览器渲染" class="headerlink" title="页面加载与浏览器渲染"></a>页面加载与浏览器渲染</h1><h2 id="1-浏览器请求页面的过程"><a href="#1-浏览器请求页面的过程" class="headerlink" title="1. 浏览器请求页面的过程"></a>1. 浏览器请求页面的过程</h2><ol>
+<li>输入网址。</li>
+<li>浏览器查找域名的<code>IP</code>地址。（迭代查询）</li>
+<li>建立<code>TCP</code>连接</li>
+<li>浏览器给<code>web</code>服务器发送一个<code>HTTP</code>请求</li>
+<li>网站服务的永久重定向响应</li>
+<li>浏览器跟踪重定向地址。浏览器知道了要访问的正确地址，所以它会发送另一个获取请求。</li>
+<li>服务器“处理”请求，服务器接收到获取请求，然后处理并返回一个响应。</li>
+<li>服务器发回一个<code>HTML</code>响应</li>
+<li>浏览器开始显示<code>HTML</code></li>
+<li>浏览器发送请求，以获取嵌入在<code>HTML</code>中的对象。</li>
+</ol>
+<h2 id="2-浏览器渲染页面的过程"><a href="#2-浏览器渲染页面的过程" class="headerlink" title="2. 浏览器渲染页面的过程"></a>2. 浏览器渲染页面的过程</h2><p>   浏览器渲染页面的过程可以概括为以下五个步骤：</p>
+<ol>
+<li>处理 <code>HTML</code> 标记并构建 <code>DOM</code> 树；</li>
+<li>处理 <code>CSS</code> 标记并构建 <code>CSSOM</code> 树；</li>
+<li>将 <code>DOM</code> 与 <code>CSSOM</code> 合并成一个渲染树（<code>Render Tree</code>）；</li>
+<li>根据渲染树来布局，以计算每个节点的几何信息；</li>
+<li>将各个节点绘制到屏幕上。<br>这五个步骤并不一定一次性顺序完成。如果 <code>DOM</code> 或 <code>CSSOM</code> 被修改，以上过程需要重复执行，这样才能计算出哪些像素需要在屏幕上进行重新渲染。遇到<code>&lt;script&gt;</code>标签时会执行并阻塞渲染。</li>
+</ol>
+<h2 id="3-优化渲染关键路径方案"><a href="#3-优化渲染关键路径方案" class="headerlink" title="3. 优化渲染关键路径方案"></a>3. 优化渲染关键路径方案</h2><p>   通过优化渲染关键路径，可以优化页面渲染性能，减少页面白屏时间。<br>   优化<code>JS</code>：<code>JavaScrip</code>t文件加载会阻塞<code>DOM</code>树的构建，可以给<code>&lt;script&gt;</code>标签添加异步属性<code>async</code>，这样浏览器的<code>HTML</code>解析就不会被<code>js</code>文件阻塞。<br>   优化<code>CSS</code>：浏览器每次遇到<code>&lt;link&gt;</code>标签时，浏览器就需要向服务器发出请求获得<code>CSS</code>文件，然后才继续构建<code>DOM</code>树和<code>CSSOM</code>树，可以合并所有<code>CSS</code>成一个文件，减少<code>HTTP</code>请求，减少关键资源往返加载的时间，优化渲染速度。</p>
+<h2 id="4-其他优化方案"><a href="#4-其他优化方案" class="headerlink" title="4. 其他优化方案"></a>4. 其他优化方案</h2><h3 id="1-加载部分HTML"><a href="#1-加载部分HTML" class="headerlink" title="1. 加载部分HTML"></a>1. 加载部分HTML</h3><p>   浏览器先加载主要<code>HTML</code>初始化静态部分，动态变化的<code>HTML</code>内容通过<code>Ajax</code>请求加载。这样可以减少浏览器构建<code>DOM</code>树的工作量，让用户感觉页面加载速度很快。</p>
+<h3 id="2-压缩"><a href="#2-压缩" class="headerlink" title="2. 压缩"></a>2. 压缩</h3><p>   对<code>HTML</code>、<code>CSS</code>、<code>JavaScript</code>这些文件去除冗余字符（例如不必要的注释、空格符和换行符等），再进行压缩，减小文件数据大小，加快浏览器解析文件编码。</p>
+<h3 id="3-图片加载优化"><a href="#3-图片加载优化" class="headerlink" title="3. 图片加载优化"></a>3. 图片加载优化</h3><p>1）小图标合并成雪碧图，进而减少<code>img</code>的<code>HTTP</code>请求次数；<br>2）图片加载较多时，采用懒加载的方案，用户滚动页面可视区时再加载渲染图片。</p>
+<h3 id="4-HTTP缓存"><a href="#4-HTTP缓存" class="headerlink" title="4. HTTP缓存"></a>4. HTTP缓存</h3><p>   浏览器自带了<code>HTTP</code>缓存的功能。</p>]]></content>
+      <categories>
+        <category>js</category>
+      </categories>
+  </entry>
+  <entry>
     <title>webpack</title>
     <url>/2020/02/26/webpack/</url>
     <content><![CDATA[<h1 id="Webpack"><a href="#Webpack" class="headerlink" title="Webpack"></a>Webpack</h1><h2 id="1-Webpack的基本概念"><a href="#1-Webpack的基本概念" class="headerlink" title="1. Webpack的基本概念"></a>1. Webpack的基本概念</h2><p>   <code>webpack</code>它做的事情是，分析你的项目结构，找到<code>JavaScript</code>模块以及其它的一些浏览器不能直接运行的拓展语言（<code>Scss</code>，<code>TypeScript</code>等），并将其打包为合适的格式以供浏览器使用。</p>
